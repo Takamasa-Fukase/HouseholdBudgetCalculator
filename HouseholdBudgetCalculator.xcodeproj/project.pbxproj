@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BCFDFA0E2D5B49BF00B20B9D /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = BCFDFA0D2D5B49BF00B20B9D /* Parchment */; };
+		BCFDFA372D5B97B500B20B9D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BCFDFA362D5B97B500B20B9D /* RxCocoa */; };
+		BCFDFA392D5B97B500B20B9D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCFDFA382D5B97B500B20B9D /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFDFA392D5B97B500B20B9D /* RxSwift in Frameworks */,
+				BCFDFA372D5B97B500B20B9D /* RxCocoa in Frameworks */,
 				BCFDFA0E2D5B49BF00B20B9D /* Parchment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +135,8 @@
 			name = HouseholdBudgetCalculator;
 			packageProductDependencies = (
 				BCFDFA0D2D5B49BF00B20B9D /* Parchment */,
+				BCFDFA362D5B97B500B20B9D /* RxCocoa */,
+				BCFDFA382D5B97B500B20B9D /* RxSwift */,
 			);
 			productName = HouseholdBudgetCalculator;
 			productReference = BCFDF9D82D5B038A00B20B9D /* HouseholdBudgetCalculator.app */;
@@ -216,6 +222,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				BCFDFA0C2D5B49BF00B20B9D /* XCRemoteSwiftPackageReference "Parchment" */,
+				BCFDFA352D5B97B500B20B9D /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BCFDF9D92D5B038A00B20B9D /* Products */;
@@ -588,6 +595,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		BCFDFA352D5B97B500B20B9D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -595,6 +610,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BCFDFA0C2D5B49BF00B20B9D /* XCRemoteSwiftPackageReference "Parchment" */;
 			productName = Parchment;
+		};
+		BCFDFA362D5B97B500B20B9D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCFDFA352D5B97B500B20B9D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BCFDFA382D5B97B500B20B9D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCFDFA352D5B97B500B20B9D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
