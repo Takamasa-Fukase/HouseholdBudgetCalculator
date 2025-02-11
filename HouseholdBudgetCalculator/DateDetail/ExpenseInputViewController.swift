@@ -10,33 +10,47 @@ import UIKit
 class ExpenseInputViewController: UIViewController {
     var activeTextField: UIView?
     var monthlyExpense: MonthlyExpense = .init(
-        title: "2025年2月",
-        expenseGroups: [
-            .init(title: "スーパー", items: [
-                .init(title: "", amount: 0)
-            ]),
-            .init(title: "1人外食", items: [
-                .init(title: "", amount: 0)
-            ]),
-            .init(title: "コンビニ・自販機", items: [
-                .init(title: "", amount: 0)
-            ]),
-            .init(title: "カラオケ", items: [
-                .init(title: "", amount: 0)
-            ]),
-            .init(title: "1人カフェ", items: [
-                .init(title: "", amount: 0)
-            ]),
-            .init(title: "友達との交際費", items: [
-                .init(title: "", amount: 0)
-            ])
-        ]
+        title: "",
+        expenseGroups: []
     )
 
     @IBOutlet weak var tableView: TouchesBeganTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // データがまだ存在しない場合は追加
+        if UserDefaults.monthlyExpenses.isEmpty {
+            UserDefaults.monthlyExpenses = [
+                .init(
+                    title: "2025年2月",
+                    expenseGroups: [
+                        .init(title: "スーパー", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "1人外食", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "コンビニ・自販機", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "カラオケ", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "1人カフェ", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "友達との交際費", items: [
+                            .init(title: "", amount: 0)
+                        ])
+                    ]
+                )
+            ]
+        }
+        
+        // 取り出したデータを格納
+        monthlyExpense = UserDefaults.monthlyExpenses[0]
+        
         setupTableView()
     }
     
