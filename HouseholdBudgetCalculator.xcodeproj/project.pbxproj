@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BCFDFA0E2D5B49BF00B20B9D /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = BCFDFA0D2D5B49BF00B20B9D /* Parchment */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BCFDF9EF2D5B038B00B20B9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFDFA0E2D5B49BF00B20B9D /* Parchment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 			);
 			name = HouseholdBudgetCalculator;
 			packageProductDependencies = (
+				BCFDFA0D2D5B49BF00B20B9D /* Parchment */,
 			);
 			productName = HouseholdBudgetCalculator;
 			productReference = BCFDF9D82D5B038A00B20B9D /* HouseholdBudgetCalculator.app */;
@@ -208,6 +214,9 @@
 			);
 			mainGroup = BCFDF9CF2D5B038900B20B9D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BCFDFA0C2D5B49BF00B20B9D /* XCRemoteSwiftPackageReference "Parchment" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BCFDF9D92D5B038A00B20B9D /* Products */;
 			projectDirPath = "";
@@ -569,6 +578,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCFDFA0C2D5B49BF00B20B9D /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCFDFA0D2D5B49BF00B20B9D /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCFDFA0C2D5B49BF00B20B9D /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BCFDF9D02D5B038900B20B9D /* Project object */;
 }
