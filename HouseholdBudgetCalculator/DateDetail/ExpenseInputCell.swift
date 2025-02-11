@@ -1,23 +1,18 @@
 //
-//  PaymentListItemCell.swift
+//  ExpenseInputCell.swift
 //  TravelBudgetCalculator
 //
 //  Created by ウルトラ深瀬 on 30/8/24.
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class PaymentListItemCell: UITableViewCell {    
-    var disposeBag = DisposeBag()
+class ExpenseInputCell: UITableViewCell {
     var id: UUID = UUID()
-
+    
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var currencyLabel: UILabel!
-    @IBOutlet weak var yenDisplayLabel: UILabel!
+    @IBOutlet weak var menuButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +21,6 @@ class PaymentListItemCell: UITableViewCell {
         setupAmountTextField()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        disposeBag = DisposeBag()
-    }
-
     func setupTitleTextField() {
         titleTextField.returnKeyType = .done
     }
