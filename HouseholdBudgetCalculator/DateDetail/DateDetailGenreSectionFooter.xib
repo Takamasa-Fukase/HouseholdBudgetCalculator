@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DateDetailGenreSectionFooter" customModule="TravelBudgetCalculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyU-HY-HmT">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfA-Ki-wT5">
+                    <rect key="frame" x="16" y="12" width="361" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EL8-q4-7wB"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="+ 追加"/>
+                    <connections>
+                        <action selector="addFormButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="jbg-mB-Njf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="RyU-HY-HmT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3y1-b9-RRc"/>
+                <constraint firstItem="qfA-Ki-wT5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="5p6-J8-K1s"/>
+                <constraint firstItem="RyU-HY-HmT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6LM-B6-97T"/>
+                <constraint firstAttribute="bottom" secondItem="qfA-Ki-wT5" secondAttribute="bottom" constant="12" id="B0t-Iq-eqR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qfA-Ki-wT5" secondAttribute="trailing" constant="16" id="DrV-ch-B7h"/>
+                <constraint firstAttribute="bottom" secondItem="RyU-HY-HmT" secondAttribute="bottom" id="Jfy-f0-fLd"/>
+                <constraint firstItem="qfA-Ki-wT5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="VPu-m0-jJS"/>
+                <constraint firstItem="RyU-HY-HmT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="xuG-lT-Sah"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="41.984732824427482" y="237.67605633802819"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
