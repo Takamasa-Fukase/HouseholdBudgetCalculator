@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ExpenseInputViewController: UIViewController {
     var activeTextField: UIView?
@@ -85,15 +87,16 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let sectionFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpenseInputSectionFooter.className) as! ExpenseInputSectionFooter
-        sectionFooter.formAddButton.addAction(UIAction { [weak self] _ in
-            guard let self = self else { return }
-            let newItem = ExpenseItem(title: "", amount: 0)
-            self.monthlyExpense.expenseGroups[section].items.append(newItem)
-            
-            self.saveToUserDefaults()
-            
-            self.tableView.reloadSections(IndexSet(integer: section), with: .none)
-        }, for: .touchUpInside)
+        sectionFooter.formAddButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                let newItem = ExpenseItem(title: "", amount: 0)
+                self.monthlyExpense.expenseGroups[section].items.append(newItem)
+                
+                self.saveToUserDefaults()
+                
+                self.tableView.reloadSections(IndexSet(integer: section), with: .none)
+            }).disposed(by: sectionFooter.disposeBag)
         return sectionFooter
     }
 
@@ -129,7 +132,8 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             cell.amountTextField.text = "\(item.amount)"
         }
         
-        cell.menuButton.addAction(UIAction { [weak self] _ in
+        cell.menuButton.rx.tap
+            .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
             let id = cell.id
             guard let selectedItem = self.monthlyExpense.expenseGroups.first(where: { $0.items.contains(where: { $0.id == id }) })?.items.first(where: { $0.id == id }) else {
@@ -161,9 +165,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             alert.addAction(cancel)
             alert.addAction(delete)
             self.present(alert, animated: true)
-        }, for: .touchUpInside)
+            }).disposed(by: cell.disposeBag)
         
-        cell.titleTextField.addAction(UIAction { [weak self] _ in
+        cell.titleTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
             let title = cell.titleTextField.text ?? ""
             self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].title = title
@@ -174,9 +179,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
              項目名の入力後に完了をおさずにそのまま金額のフォームに移動するときにも更新してしまうと、金額のフォームのカーソルが消えてしまうバグがあるので、このタイミングでは更新しない。データソース自体は書き換えているので問題ないと思われる。
              */
 //                self.tableView.reloadRows(at: [indexPath], with: .none)
-        }, for: .editingDidEnd)
+            }).disposed(by: cell.disposeBag)
         
-        cell.amountTextField.addAction(UIAction { [weak self] _ in
+        cell.amountTextField.rx.controlEvent(.editingDidEnd)
+            .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
             self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].title = cell.titleTextField.text ?? ""
             self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
@@ -185,7 +191,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             
             // MEMO: セクションヘッダーに合計金額を表示しているため、セルだけでなくセクションを丸ごと更新している
             self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .none)
-        }, for: .editingDidEnd)
+            }).disposed(by: cell.disposeBag)
         
         return cell
     }

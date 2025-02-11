@@ -40,7 +40,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="formAddButton" destination="qfA-Ki-wT5" id="oHf-oc-vKf"/>
+                <outlet property="formAddButton" destination="qfA-Ki-wT5" id="Z1j-zC-CO8"/>
             </connections>
             <point key="canvasLocation" x="41.984732824427482" y="237.67605633802819"/>
         </view>

@@ -6,7 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ExpenseInputSectionFooter: UITableViewHeaderFooterView {
+    var disposeBag = DisposeBag()
+    
     @IBOutlet weak var formAddButton: UIButton!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
 }

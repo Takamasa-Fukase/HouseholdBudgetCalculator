@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ExpenseInputCell: UITableViewCell {
+    var disposeBag = DisposeBag()
     var id: UUID = UUID()
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,6 +22,11 @@ class ExpenseInputCell: UITableViewCell {
         
         setupTitleTextField()
         setupAmountTextField()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
     
     func setupTitleTextField() {
