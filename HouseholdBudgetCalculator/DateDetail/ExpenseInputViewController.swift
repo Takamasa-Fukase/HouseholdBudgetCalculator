@@ -1,5 +1,5 @@
 //
-//  DateDetailViewController.swift
+//  ExpenseInputViewController.swift
 //  TravelBudgetCalculator
 //
 //  Created by ウルトラ深瀬 on 31/8/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DateDetailViewController: UIViewController {
+class ExpenseInputViewController: UIViewController {
     var activeTextField: UIView?
     var monthlyExpense: MonthlyExpense = .init(
         title: "2025年2月",
@@ -57,7 +57,7 @@ class DateDetailViewController: UIViewController {
     }
 }
 
-extension DateDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpenseInputSectionHeader.className) as! ExpenseInputSectionHeader
         let sectionData = monthlyExpense.expenseGroups[section]
@@ -177,7 +177,7 @@ extension DateDetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DateDetailViewController: UITextFieldDelegate {
+extension ExpenseInputViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
