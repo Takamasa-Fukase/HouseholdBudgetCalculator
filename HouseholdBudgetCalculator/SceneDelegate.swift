@@ -13,8 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let expenseInputVC = UIStoryboard(name: ExpenseInputViewController.className, bundle: nil).instantiateInitialViewController() as? ExpenseInputViewController
-        window?.rootViewController = expenseInputVC
+        window?.rootViewController = MonthListViewController()
         window?.makeKeyAndVisible()
     }
 }
