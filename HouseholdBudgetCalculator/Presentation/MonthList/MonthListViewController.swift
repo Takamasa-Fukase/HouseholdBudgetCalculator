@@ -22,6 +22,7 @@ class MonthListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "月を選択"
         setupTableView()
         monthlyExpenses = UserDefaults.monthlyExpenses
         tableView.reloadData()
@@ -31,7 +32,7 @@ class MonthListViewController: UIViewController {
         tableView.register(UINib(nibName: MonthListCell.className, bundle: .main), forCellReuseIdentifier: MonthListCell.className)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset.top = 32
+        tableView.contentInset.top = 16
     }
 }
 
@@ -52,6 +53,8 @@ extension MonthListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移
+        let vc = ExpenseGroupListViewController()
+        vc.monthlyExpense = monthlyExpenses[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

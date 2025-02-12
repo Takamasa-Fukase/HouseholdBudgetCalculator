@@ -9,8 +9,11 @@ import UIKit
 import Parchment
 
 class ExpenseGroupListViewController: UIViewController {
+    var monthlyExpense: MonthlyExpense = .init(title: "", expenseGroups: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = monthlyExpense.title
+        view.backgroundColor = .systemBackground
     }
 }
