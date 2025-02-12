@@ -1,0 +1,16 @@
+PODS:
+  - GTProgressBar (0.3.3)
+
+DEPENDENCIES:
+  - GTProgressBar
+
+SPEC REPOS:
+  trunk:
+    - GTProgressBar
+
+SPEC CHECKSUMS:
+  GTProgressBar: a480283ecb0ada50de16c71e634892826928f640
+
+PODFILE CHECKSUM: 0cdfb81325ee709045dc61f42a80d74dcc7c8c9c
+
+COCOAPODS: 1.16.2

@@ -20,15 +20,86 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-tb-gOr">
-                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <rect key="frame" x="0.0" y="139" width="393" height="713"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r61-E0-32d">
+                    <rect key="frame" x="0.0" y="59" width="393" height="80"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-Sh-5p0" customClass="GTProgressBar" customModule="GTProgressBar">
+                            <rect key="frame" x="16" y="12" width="361" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="DjX-LQ-6RE"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="barFillColor">
+                                    <color key="value" systemColor="systemBlueColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="barBorderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="displayLabel" value="NO"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
+                                    <color key="value" systemColor="labelColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="barFillInset">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orr-if-3iM">
+                            <rect key="frame" x="16" y="36" width="361" height="12"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出費：3.7万円" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1q-H7-Six">
+                                    <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予算：10万円" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-hi-Bbw">
+                                    <rect key="frame" x="180.66666666666663" y="0.0" width="180.33333333333337" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="e2C-6Z-wdU"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り：6.3万円" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHN-E2-mdA">
+                            <rect key="frame" x="16" y="56" width="361" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="systemGreenColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Orr-if-3iM" secondAttribute="trailing" constant="16" id="2UT-lx-ebu"/>
+                        <constraint firstItem="Orr-if-3iM" firstAttribute="top" secondItem="cEs-Sh-5p0" secondAttribute="bottom" constant="12" id="2fi-Ya-BW2"/>
+                        <constraint firstItem="zHN-E2-mdA" firstAttribute="top" secondItem="Orr-if-3iM" secondAttribute="bottom" constant="8" id="2wk-ii-Jty"/>
+                        <constraint firstItem="cEs-Sh-5p0" firstAttribute="top" secondItem="r61-E0-32d" secondAttribute="top" constant="12" id="6gH-gK-g8z"/>
+                        <constraint firstAttribute="trailing" secondItem="cEs-Sh-5p0" secondAttribute="trailing" constant="16" id="IVC-F1-MSc"/>
+                        <constraint firstItem="cEs-Sh-5p0" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="PtR-bZ-YYj"/>
+                        <constraint firstAttribute="height" constant="80" id="VXR-WG-PoF"/>
+                        <constraint firstItem="zHN-E2-mdA" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="brc-GF-Xdj"/>
+                        <constraint firstItem="Orr-if-3iM" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="kYo-ro-c76"/>
+                        <constraint firstAttribute="trailing" secondItem="zHN-E2-mdA" secondAttribute="trailing" constant="16" id="w2Z-oI-D5O"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="r61-E0-32d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="75g-YJ-9gW"/>
+                <constraint firstItem="r61-E0-32d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FQJ-Ar-YWg"/>
+                <constraint firstItem="r61-E0-32d" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="HA4-6n-w49"/>
                 <constraint firstAttribute="bottom" secondItem="3ns-tb-gOr" secondAttribute="bottom" id="HnX-5p-eXY"/>
-                <constraint firstItem="3ns-tb-gOr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="X9X-Ui-tJu"/>
+                <constraint firstItem="3ns-tb-gOr" firstAttribute="top" secondItem="r61-E0-32d" secondAttribute="bottom" id="JtN-Z3-44S"/>
                 <constraint firstItem="3ns-tb-gOr" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tfw-0n-Fhg"/>
                 <constraint firstItem="3ns-tb-gOr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wHb-Iq-HWd"/>
             </constraints>
@@ -36,8 +107,17 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

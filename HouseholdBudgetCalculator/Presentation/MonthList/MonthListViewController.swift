@@ -8,8 +8,6 @@
 import UIKit
 
 class MonthListViewController: UIViewController {
-    private var monthlyExpenses: [MonthlyExpense] = []
-
     @IBOutlet weak var tableView: UITableView!
     
     init() {
@@ -25,7 +23,6 @@ class MonthListViewController: UIViewController {
         title = "月を選択"
         setupTableView()
         createDataIfNotExists()
-        monthlyExpenses = UserDefaults.monthlyExpenses
         tableView.reloadData()
     }
     
@@ -74,18 +71,18 @@ extension MonthListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return monthlyExpenses.count
+        return UserDefaults.monthlyExpenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MonthListCell.className, for: indexPath) as! MonthListCell
-        cell.dateLabel.text = monthlyExpenses[indexPath.row].title
+        cell.dateLabel.text = UserDefaults.monthlyExpenses[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ExpenseGroupListViewController()
-        vc.monthlyExpense = monthlyExpenses[indexPath.row]
+        vc.monthlyExpense = UserDefaults.monthlyExpenses[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

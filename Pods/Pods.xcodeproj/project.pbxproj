@@ -1,0 +1,1019 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0731D7C6E8C18B1055761CDDDF9D2383 /* Pods-HouseholdBudgetCalculator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3E387409BDC458F3575D6EE624AAC7 /* Pods-HouseholdBudgetCalculator-dummy.m */; };
+		0812D021C103ECF293CB734F963348F6 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447616938412DC1E5BDB0C2D90D2994 /* UILabelExtensions.swift */; };
+		10969C93632BC8C35849D2A6F66FDE5A /* GTProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DF6EBB6ABAB8F95076237E5E6CCBD /* GTProgressBar.swift */; };
+		12453A343B4F2C0668AF057A2E9B84C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		13BFEFCA463D2A920CFA4D60BEE903EC /* GTProgressBarCornerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41305AC745AED11C7C864BEC76D34DAC /* GTProgressBarCornerType.swift */; };
+		2C32386E26E7F9D4457C271C4D837EF6 /* Pods-HouseholdBudgetCalculatorTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6615D224CE9AA4A7E4DBA493B862BDF /* Pods-HouseholdBudgetCalculatorTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		358DD9671220947590D51CA13EEAB655 /* GTProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3524D553B37046E5A7BC9E1CD048B250 /* GTProgressBar-dummy.m */; };
+		4AE8D82D404ECF2F14AF2679E39513D4 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D761A4A4478AC1142FEA332542F62 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m */; };
+		4E31A20B9304E62B3446D20266ED647F /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFD3909C2048398A857249D92AD80A /* UIViewExtensions.swift */; };
+		566FC253F3C19A2AC219AF93258810B0 /* Pods-HouseholdBudgetCalculatorTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF34F3C9F0E229F2773DF2641AEB238B /* Pods-HouseholdBudgetCalculatorTests-dummy.m */; };
+		58D4E3BC9EEA7514BB7791AB9084D6CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		73C4AC50E2E0F34356DC13B1062E6604 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		78ECB2909F4EEDD8B1F2D331EF569620 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6CCB7C4F9FD0EB377517BA5C6ACF0E /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79597FDC7D23F5CC788CB8801DE6C02E /* Pods-HouseholdBudgetCalculator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB6D0DC0C51211807A9F1D36F1DE1838 /* Pods-HouseholdBudgetCalculator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8604C2BCD319FAB0AD9D5614904559F2 /* HorizontalLabelPositionFrameCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1015B42F7A6DD9E2128CB96337740D2 /* HorizontalLabelPositionFrameCalculator.swift */; };
+		A010DF5F8DC985A54152CEDED3B6DE6F /* GTProgressBarLabelPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED2949AFD8E52C808C30576629B07F /* GTProgressBarLabelPosition.swift */; };
+		A433C6037091101FF7AFD960A1419C99 /* FrameCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C150DC54B6C9D72293FD957126ED5 /* FrameCalculator.swift */; };
+		C95217F4F712DCE6BF7C82C4423BD0F6 /* GTProgressBarOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514CF6FBE0E50B19E6311E7EC2E33A83 /* GTProgressBarOrientation.swift */; };
+		D5D274E0E12E08B50A3A35E819CC512A /* GTProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC7E1B8854A062E1B45AF9A77FC17A1 /* GTProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E679017A6FA65784F856D6FC4881184B /* GTProgressBarDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054A416E058ACE06FD5255234E09FA1F /* GTProgressBarDirection.swift */; };
+		E94B82FAE8ADF58E5B8C971ED381CEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		FC7CB54A6187F49964E1DAF4AA230F58 /* VerticalLabelPositionFrameCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F43E5D76CD9E91020247FE866C042 /* VerticalLabelPositionFrameCalculator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		444EF0836D7C7745C4F3504C5E949A6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE515A07ACC0A4FB01FC1FBE347BC45C;
+			remoteInfo = GTProgressBar;
+		};
+		5A289448E52EB4B9CF9907041201734D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D89C16D7D3B42E123A145C160243F84;
+			remoteInfo = "Pods-HouseholdBudgetCalculator";
+		};
+		7A149E7F1C92EEF51D1499392F4F0671 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE515A07ACC0A4FB01FC1FBE347BC45C;
+			remoteInfo = GTProgressBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05311B892F2C02B9A5B74C843B55E61E /* Pods-HouseholdBudgetCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		054A416E058ACE06FD5255234E09FA1F /* GTProgressBarDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GTProgressBarDirection.swift; path = GTProgressBar/Classes/GTProgressBarDirection.swift; sourceTree = "<group>"; };
+		0A6CCB7C4F9FD0EB377517BA5C6ACF0E /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h"; sourceTree = "<group>"; };
+		0ABBC7EA46086253498A7C6DE63FAE7B /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-Info.plist"; sourceTree = "<group>"; };
+		122BF0588816BEBCC81EE97B705B42AF /* GTProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		1447616938412DC1E5BDB0C2D90D2994 /* UILabelExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UILabelExtensions.swift; path = GTProgressBar/Classes/UILabelExtensions.swift; sourceTree = "<group>"; };
+		3174873BAC84A271B68FC8EB295DB0C2 /* GTProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E8918DE97E27E54F50ACD9402456D5 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-frameworks.sh"; sourceTree = "<group>"; };
+		32EA761F19EA1C36C3D9BE2A1AD3EFFB /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.modulemap"; sourceTree = "<group>"; };
+		3524D553B37046E5A7BC9E1CD048B250 /* GTProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTProgressBar-dummy.m"; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3F5A699DE180789BA31A1E06C77160A2 /* Pods_HouseholdBudgetCalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseholdBudgetCalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41305AC745AED11C7C864BEC76D34DAC /* GTProgressBarCornerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GTProgressBarCornerType.swift; path = GTProgressBar/Classes/GTProgressBarCornerType.swift; sourceTree = "<group>"; };
+		42CFC43EB8DAE429C172F193D1BD2824 /* Pods-HouseholdBudgetCalculator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculator-acknowledgements.plist"; sourceTree = "<group>"; };
+		51091D532A01608685832BD91E4AE00E /* Pods-HouseholdBudgetCalculatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HouseholdBudgetCalculatorTests.modulemap"; sourceTree = "<group>"; };
+		514CF6FBE0E50B19E6311E7EC2E33A83 /* GTProgressBarOrientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GTProgressBarOrientation.swift; path = GTProgressBar/Classes/GTProgressBarOrientation.swift; sourceTree = "<group>"; };
+		5C3D761A4A4478AC1142FEA332542F62 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m"; sourceTree = "<group>"; };
+		5D2B50AD535F50B501E63A471BF82697 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5F8A592B7100C0191769B4C4FA6851D1 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		66AB10BEB5049E1C53482D6403B46AF1 /* Pods-HouseholdBudgetCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		66FFD3909C2048398A857249D92AD80A /* UIViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = GTProgressBar/Classes/UIViewExtensions.swift; sourceTree = "<group>"; };
+		6C91D42BCC7DAA733865A93E5861321A /* Pods-HouseholdBudgetCalculator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculator-Info.plist"; sourceTree = "<group>"; };
+		6D0E6EBC95AA4F8A14E9E1E2155FCA6D /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		731F43E5D76CD9E91020247FE866C042 /* VerticalLabelPositionFrameCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerticalLabelPositionFrameCalculator.swift; path = GTProgressBar/Classes/VerticalLabelPositionFrameCalculator.swift; sourceTree = "<group>"; };
+		782E8CCD52FD79C5042E66A8A97DD9C4 /* Pods-HouseholdBudgetCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		7B57DEEA9DD9380860FDD3447037FDD9 /* GTProgressBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTProgressBar.release.xcconfig; sourceTree = "<group>"; };
+		852D96E5E89C41D3B23504F2424DD97C /* Pods-HouseholdBudgetCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HouseholdBudgetCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		8BA2E22A1C8BEAD3FD07FAC77E83C249 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9079DF7B78D31135593C6D0CB0B55231 /* Pods_HouseholdBudgetCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseholdBudgetCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		924C150DC54B6C9D72293FD957126ED5 /* FrameCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameCalculator.swift; path = GTProgressBar/Classes/FrameCalculator.swift; sourceTree = "<group>"; };
+		9B090E64CB9FF4E182B8D3D91E6EFCFD /* GTProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GTProgressBar-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AF34F3C9F0E229F2773DF2641AEB238B /* Pods-HouseholdBudgetCalculatorTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HouseholdBudgetCalculatorTests-dummy.m"; sourceTree = "<group>"; };
+		B5EB1DE3C26E3B1070C016B635CC67DA /* Pods-HouseholdBudgetCalculator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HouseholdBudgetCalculator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA3E387409BDC458F3575D6EE624AAC7 /* Pods-HouseholdBudgetCalculator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HouseholdBudgetCalculator-dummy.m"; sourceTree = "<group>"; };
+		BB6D0DC0C51211807A9F1D36F1DE1838 /* Pods-HouseholdBudgetCalculator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HouseholdBudgetCalculator-umbrella.h"; sourceTree = "<group>"; };
+		C78F7A8E2B56A7794DCA0217B96707D7 /* Pods-HouseholdBudgetCalculatorTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		C952EB66878231D2195E1D1EEBBADD4D /* Pods-HouseholdBudgetCalculatorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HouseholdBudgetCalculatorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D1015B42F7A6DD9E2128CB96337740D2 /* HorizontalLabelPositionFrameCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HorizontalLabelPositionFrameCalculator.swift; path = GTProgressBar/Classes/HorizontalLabelPositionFrameCalculator.swift; sourceTree = "<group>"; };
+		D2ED2949AFD8E52C808C30576629B07F /* GTProgressBarLabelPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GTProgressBarLabelPosition.swift; path = GTProgressBar/Classes/GTProgressBarLabelPosition.swift; sourceTree = "<group>"; };
+		D6615D224CE9AA4A7E4DBA493B862BDF /* Pods-HouseholdBudgetCalculatorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HouseholdBudgetCalculatorTests-umbrella.h"; sourceTree = "<group>"; };
+		D6B64DF5706079595FC74D2898DE5B00 /* Pods_HouseholdBudgetCalculator_HouseholdBudgetCalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HouseholdBudgetCalculator_HouseholdBudgetCalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C771CCBC74498C63226934AB3E0589 /* GTProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GTProgressBar.modulemap; sourceTree = "<group>"; };
+		ECBF64AE076EECD9EFC762AC3A0791F1 /* Pods-HouseholdBudgetCalculator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HouseholdBudgetCalculator-frameworks.sh"; sourceTree = "<group>"; };
+		ECC7E1B8854A062E1B45AF9A77FC17A1 /* GTProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTProgressBar-umbrella.h"; sourceTree = "<group>"; };
+		F253F59052A36791E93B2BE29DECD827 /* GTProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTProgressBar.debug.xcconfig; sourceTree = "<group>"; };
+		F59FCD10AF549A1EEA1DF702EE48FC75 /* Pods-HouseholdBudgetCalculatorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HouseholdBudgetCalculatorTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F6A3EF51D9D9370FDA0A3C8216D47285 /* Pods-HouseholdBudgetCalculator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HouseholdBudgetCalculator.modulemap"; sourceTree = "<group>"; };
+		F82DF6EBB6ABAB8F95076237E5E6CCBD /* GTProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GTProgressBar.swift; path = GTProgressBar/Classes/GTProgressBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		354B3F9F0F8FE4A3AE5F2B5717EC90EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C4AC50E2E0F34356DC13B1062E6604 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4872C36EDB293FD4B21DF664B4C525F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D4E3BC9EEA7514BB7791AB9084D6CF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D696A17227912F104C681B2E907AD27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E94B82FAE8ADF58E5B8C971ED381CEB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81C27F42DA4063EE8A58B1DFBD638491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12453A343B4F2C0668AF057A2E9B84C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F41D05A127C9C48979E0B377DE2E277 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				32EA761F19EA1C36C3D9BE2A1AD3EFFB /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.modulemap */,
+				8BA2E22A1C8BEAD3FD07FAC77E83C249 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.markdown */,
+				5D2B50AD535F50B501E63A471BF82697 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-acknowledgements.plist */,
+				5C3D761A4A4478AC1142FEA332542F62 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m */,
+				32E8918DE97E27E54F50ACD9402456D5 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-frameworks.sh */,
+				0ABBC7EA46086253498A7C6DE63FAE7B /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-Info.plist */,
+				0A6CCB7C4F9FD0EB377517BA5C6ACF0E /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h */,
+				5F8A592B7100C0191769B4C4FA6851D1 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.debug.xcconfig */,
+				6D0E6EBC95AA4F8A14E9E1E2155FCA6D /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.release.xcconfig */,
+			);
+			name = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests";
+			path = "Target Support Files/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests";
+			sourceTree = "<group>";
+		};
+		356022776585E8513E297DD6879212B3 /* Pods-HouseholdBudgetCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				F6A3EF51D9D9370FDA0A3C8216D47285 /* Pods-HouseholdBudgetCalculator.modulemap */,
+				B5EB1DE3C26E3B1070C016B635CC67DA /* Pods-HouseholdBudgetCalculator-acknowledgements.markdown */,
+				42CFC43EB8DAE429C172F193D1BD2824 /* Pods-HouseholdBudgetCalculator-acknowledgements.plist */,
+				BA3E387409BDC458F3575D6EE624AAC7 /* Pods-HouseholdBudgetCalculator-dummy.m */,
+				ECBF64AE076EECD9EFC762AC3A0791F1 /* Pods-HouseholdBudgetCalculator-frameworks.sh */,
+				6C91D42BCC7DAA733865A93E5861321A /* Pods-HouseholdBudgetCalculator-Info.plist */,
+				BB6D0DC0C51211807A9F1D36F1DE1838 /* Pods-HouseholdBudgetCalculator-umbrella.h */,
+				782E8CCD52FD79C5042E66A8A97DD9C4 /* Pods-HouseholdBudgetCalculator.debug.xcconfig */,
+				852D96E5E89C41D3B23504F2424DD97C /* Pods-HouseholdBudgetCalculator.release.xcconfig */,
+			);
+			name = "Pods-HouseholdBudgetCalculator";
+			path = "Target Support Files/Pods-HouseholdBudgetCalculator";
+			sourceTree = "<group>";
+		};
+		3B08A33DE2FEEB0A40E8FF3C1FA61E8A /* Pods-HouseholdBudgetCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				51091D532A01608685832BD91E4AE00E /* Pods-HouseholdBudgetCalculatorTests.modulemap */,
+				C952EB66878231D2195E1D1EEBBADD4D /* Pods-HouseholdBudgetCalculatorTests-acknowledgements.markdown */,
+				F59FCD10AF549A1EEA1DF702EE48FC75 /* Pods-HouseholdBudgetCalculatorTests-acknowledgements.plist */,
+				AF34F3C9F0E229F2773DF2641AEB238B /* Pods-HouseholdBudgetCalculatorTests-dummy.m */,
+				C78F7A8E2B56A7794DCA0217B96707D7 /* Pods-HouseholdBudgetCalculatorTests-Info.plist */,
+				D6615D224CE9AA4A7E4DBA493B862BDF /* Pods-HouseholdBudgetCalculatorTests-umbrella.h */,
+				05311B892F2C02B9A5B74C843B55E61E /* Pods-HouseholdBudgetCalculatorTests.debug.xcconfig */,
+				66AB10BEB5049E1C53482D6403B46AF1 /* Pods-HouseholdBudgetCalculatorTests.release.xcconfig */,
+			);
+			name = "Pods-HouseholdBudgetCalculatorTests";
+			path = "Target Support Files/Pods-HouseholdBudgetCalculatorTests";
+			sourceTree = "<group>";
+		};
+		52AF76B7DCABF38014AFD61BDE1EA287 /* GTProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				924C150DC54B6C9D72293FD957126ED5 /* FrameCalculator.swift */,
+				F82DF6EBB6ABAB8F95076237E5E6CCBD /* GTProgressBar.swift */,
+				41305AC745AED11C7C864BEC76D34DAC /* GTProgressBarCornerType.swift */,
+				054A416E058ACE06FD5255234E09FA1F /* GTProgressBarDirection.swift */,
+				D2ED2949AFD8E52C808C30576629B07F /* GTProgressBarLabelPosition.swift */,
+				514CF6FBE0E50B19E6311E7EC2E33A83 /* GTProgressBarOrientation.swift */,
+				D1015B42F7A6DD9E2128CB96337740D2 /* HorizontalLabelPositionFrameCalculator.swift */,
+				1447616938412DC1E5BDB0C2D90D2994 /* UILabelExtensions.swift */,
+				66FFD3909C2048398A857249D92AD80A /* UIViewExtensions.swift */,
+				731F43E5D76CD9E91020247FE866C042 /* VerticalLabelPositionFrameCalculator.swift */,
+				F7C0B5D6B7FF785AA3D6711EDC20B53C /* Support Files */,
+			);
+			path = GTProgressBar;
+			sourceTree = "<group>";
+		};
+		737A940C819732BEC21066CD4B58F175 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3174873BAC84A271B68FC8EB295DB0C2 /* GTProgressBar.framework */,
+				9079DF7B78D31135593C6D0CB0B55231 /* Pods_HouseholdBudgetCalculator.framework */,
+				D6B64DF5706079595FC74D2898DE5B00 /* Pods_HouseholdBudgetCalculator_HouseholdBudgetCalculatorUITests.framework */,
+				3F5A699DE180789BA31A1E06C77160A2 /* Pods_HouseholdBudgetCalculatorTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		792FEDC053E24FAD2D37FD3E50772353 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52AF76B7DCABF38014AFD61BDE1EA287 /* GTProgressBar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				792FEDC053E24FAD2D37FD3E50772353 /* Pods */,
+				737A940C819732BEC21066CD4B58F175 /* Products */,
+				E2426B423AA4C3DA7517524E2B0A2F6B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2426B423AA4C3DA7517524E2B0A2F6B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				356022776585E8513E297DD6879212B3 /* Pods-HouseholdBudgetCalculator */,
+				0F41D05A127C9C48979E0B377DE2E277 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests */,
+				3B08A33DE2FEEB0A40E8FF3C1FA61E8A /* Pods-HouseholdBudgetCalculatorTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F7C0B5D6B7FF785AA3D6711EDC20B53C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9C771CCBC74498C63226934AB3E0589 /* GTProgressBar.modulemap */,
+				3524D553B37046E5A7BC9E1CD048B250 /* GTProgressBar-dummy.m */,
+				9B090E64CB9FF4E182B8D3D91E6EFCFD /* GTProgressBar-Info.plist */,
+				122BF0588816BEBCC81EE97B705B42AF /* GTProgressBar-prefix.pch */,
+				ECC7E1B8854A062E1B45AF9A77FC17A1 /* GTProgressBar-umbrella.h */,
+				F253F59052A36791E93B2BE29DECD827 /* GTProgressBar.debug.xcconfig */,
+				7B57DEEA9DD9380860FDD3447037FDD9 /* GTProgressBar.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GTProgressBar";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		72FF2C6AF5F2F77F0FB67CDC832255C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78ECB2909F4EEDD8B1F2D331EF569620 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		824ADE797E8B65A1DE5BA4E5A62495DB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D274E0E12E08B50A3A35E819CC512A /* GTProgressBar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACA27F61C87EB0ABCF5F694623D8744E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79597FDC7D23F5CC788CB8801DE6C02E /* Pods-HouseholdBudgetCalculator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8BC31496449F499B80F28FC39A0B37D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C32386E26E7F9D4457C271C4D837EF6 /* Pods-HouseholdBudgetCalculatorTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5D89C16D7D3B42E123A145C160243F84 /* Pods-HouseholdBudgetCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE64EB19AD45C2612A9141F107777A08 /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculator" */;
+			buildPhases = (
+				ACA27F61C87EB0ABCF5F694623D8744E /* Headers */,
+				F6817E17652CA597BD9BAB17AAEA97CA /* Sources */,
+				81C27F42DA4063EE8A58B1DFBD638491 /* Frameworks */,
+				5940C5168252A61CC4044969B8D26259 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B945B09133D6C28EFBE0F84DB87B28A2 /* PBXTargetDependency */,
+			);
+			name = "Pods-HouseholdBudgetCalculator";
+			productName = Pods_HouseholdBudgetCalculator;
+			productReference = 9079DF7B78D31135593C6D0CB0B55231 /* Pods_HouseholdBudgetCalculator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A81409FA1C898073397F43EC72BDE82A /* Pods-HouseholdBudgetCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31F95CC9B6EB8EC7DBA89AC8DE397524 /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculatorTests" */;
+			buildPhases = (
+				C8BC31496449F499B80F28FC39A0B37D /* Headers */,
+				E06B8303BD8DC728B95B589F1AF2FEFF /* Sources */,
+				4872C36EDB293FD4B21DF664B4C525F2 /* Frameworks */,
+				E29C2AF358F8FF0D7963C7EB4B888777 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D1833032C7F9C19BEBE331405FF6C3D /* PBXTargetDependency */,
+			);
+			name = "Pods-HouseholdBudgetCalculatorTests";
+			productName = Pods_HouseholdBudgetCalculatorTests;
+			productReference = 3F5A699DE180789BA31A1E06C77160A2 /* Pods_HouseholdBudgetCalculatorTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EE515A07ACC0A4FB01FC1FBE347BC45C /* GTProgressBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640A48B7763F1ACD921299C7C518F465 /* Build configuration list for PBXNativeTarget "GTProgressBar" */;
+			buildPhases = (
+				824ADE797E8B65A1DE5BA4E5A62495DB /* Headers */,
+				24C3204DB7296B3A3FBE97ECE90EB11C /* Sources */,
+				6D696A17227912F104C681B2E907AD27 /* Frameworks */,
+				06C1FA10D59A09820308498AB47E9FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GTProgressBar;
+			productName = GTProgressBar;
+			productReference = 3174873BAC84A271B68FC8EB295DB0C2 /* GTProgressBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD631CDC408F1B37FDCB91A7243D6A90 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBD04FF85012AC95999643AA464083EA /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests" */;
+			buildPhases = (
+				72FF2C6AF5F2F77F0FB67CDC832255C4 /* Headers */,
+				7B70B373BB69BF5C905D4C00194874C7 /* Sources */,
+				354B3F9F0F8FE4A3AE5F2B5717EC90EE /* Frameworks */,
+				9212D8ED68923A6FD401CC67ED3BB8E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2025A31FA0F4AFE13390AC539968E04 /* PBXTargetDependency */,
+			);
+			name = "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests";
+			productName = Pods_HouseholdBudgetCalculator_HouseholdBudgetCalculatorUITests;
+			productReference = D6B64DF5706079595FC74D2898DE5B00 /* Pods_HouseholdBudgetCalculator_HouseholdBudgetCalculatorUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 737A940C819732BEC21066CD4B58F175 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE515A07ACC0A4FB01FC1FBE347BC45C /* GTProgressBar */,
+				5D89C16D7D3B42E123A145C160243F84 /* Pods-HouseholdBudgetCalculator */,
+				FD631CDC408F1B37FDCB91A7243D6A90 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests */,
+				A81409FA1C898073397F43EC72BDE82A /* Pods-HouseholdBudgetCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06C1FA10D59A09820308498AB47E9FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5940C5168252A61CC4044969B8D26259 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9212D8ED68923A6FD401CC67ED3BB8E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E29C2AF358F8FF0D7963C7EB4B888777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24C3204DB7296B3A3FBE97ECE90EB11C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A433C6037091101FF7AFD960A1419C99 /* FrameCalculator.swift in Sources */,
+				10969C93632BC8C35849D2A6F66FDE5A /* GTProgressBar.swift in Sources */,
+				358DD9671220947590D51CA13EEAB655 /* GTProgressBar-dummy.m in Sources */,
+				13BFEFCA463D2A920CFA4D60BEE903EC /* GTProgressBarCornerType.swift in Sources */,
+				E679017A6FA65784F856D6FC4881184B /* GTProgressBarDirection.swift in Sources */,
+				A010DF5F8DC985A54152CEDED3B6DE6F /* GTProgressBarLabelPosition.swift in Sources */,
+				C95217F4F712DCE6BF7C82C4423BD0F6 /* GTProgressBarOrientation.swift in Sources */,
+				8604C2BCD319FAB0AD9D5614904559F2 /* HorizontalLabelPositionFrameCalculator.swift in Sources */,
+				0812D021C103ECF293CB734F963348F6 /* UILabelExtensions.swift in Sources */,
+				4E31A20B9304E62B3446D20266ED647F /* UIViewExtensions.swift in Sources */,
+				FC7CB54A6187F49964E1DAF4AA230F58 /* VerticalLabelPositionFrameCalculator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B70B373BB69BF5C905D4C00194874C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE8D82D404ECF2F14AF2679E39513D4 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E06B8303BD8DC728B95B589F1AF2FEFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566FC253F3C19A2AC219AF93258810B0 /* Pods-HouseholdBudgetCalculatorTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6817E17652CA597BD9BAB17AAEA97CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0731D7C6E8C18B1055761CDDDF9D2383 /* Pods-HouseholdBudgetCalculator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D1833032C7F9C19BEBE331405FF6C3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-HouseholdBudgetCalculator";
+			target = 5D89C16D7D3B42E123A145C160243F84 /* Pods-HouseholdBudgetCalculator */;
+			targetProxy = 5A289448E52EB4B9CF9907041201734D /* PBXContainerItemProxy */;
+		};
+		B945B09133D6C28EFBE0F84DB87B28A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTProgressBar;
+			target = EE515A07ACC0A4FB01FC1FBE347BC45C /* GTProgressBar */;
+			targetProxy = 7A149E7F1C92EEF51D1499392F4F0671 /* PBXContainerItemProxy */;
+		};
+		C2025A31FA0F4AFE13390AC539968E04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTProgressBar;
+			target = EE515A07ACC0A4FB01FC1FBE347BC45C /* GTProgressBar */;
+			targetProxy = 444EF0836D7C7745C4F3504C5E949A6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D66378F3757B36452063CD877929084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66AB10BEB5049E1C53482D6403B46AF1 /* Pods-HouseholdBudgetCalculatorTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculatorTests/Pods-HouseholdBudgetCalculatorTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculatorTests/Pods-HouseholdBudgetCalculatorTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		531AB9B51913EE274022D67EB63CB4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6CFD0607C64E0033023A9F7B24A469C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B57DEEA9DD9380860FDD3447037FDD9 /* GTProgressBar.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/GTProgressBar/GTProgressBar-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/GTProgressBar/GTProgressBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/GTProgressBar/GTProgressBar.modulemap";
+				PRODUCT_MODULE_NAME = GTProgressBar;
+				PRODUCT_NAME = GTProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7E2D25A337F1593E846E8705CA75269D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 782E8CCD52FD79C5042E66A8A97DD9C4 /* Pods-HouseholdBudgetCalculator.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator/Pods-HouseholdBudgetCalculator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator/Pods-HouseholdBudgetCalculator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A11DBDAA841087F2533A57DEBF4E5C4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852D96E5E89C41D3B23504F2424DD97C /* Pods-HouseholdBudgetCalculator.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator/Pods-HouseholdBudgetCalculator-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator/Pods-HouseholdBudgetCalculator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AAB845AF7B8D8997393D3E804C0ACC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F8A592B7100C0191769B4C4FA6851D1 /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B55EBBFD0493E049767299776AD85B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05311B892F2C02B9A5B74C843B55E61E /* Pods-HouseholdBudgetCalculatorTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculatorTests/Pods-HouseholdBudgetCalculatorTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculatorTests/Pods-HouseholdBudgetCalculatorTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D45C7AE275268486A1103B6624218A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F253F59052A36791E93B2BE29DECD827 /* GTProgressBar.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/GTProgressBar/GTProgressBar-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/GTProgressBar/GTProgressBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/GTProgressBar/GTProgressBar.modulemap";
+				PRODUCT_MODULE_NAME = GTProgressBar;
+				PRODUCT_NAME = GTProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE9917FD8BDBB4F2C37F236F70A34F44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D0E6EBC95AA4F8A14E9E1E2155FCA6D /* Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests/Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31F95CC9B6EB8EC7DBA89AC8DE397524 /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55EBBFD0493E049767299776AD85B55 /* Debug */,
+				1D66378F3757B36452063CD877929084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */,
+				531AB9B51913EE274022D67EB63CB4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640A48B7763F1ACD921299C7C518F465 /* Build configuration list for PBXNativeTarget "GTProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45C7AE275268486A1103B6624218A74 /* Debug */,
+				6CFD0607C64E0033023A9F7B24A469C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE64EB19AD45C2612A9141F107777A08 /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E2D25A337F1593E846E8705CA75269D /* Debug */,
+				A11DBDAA841087F2533A57DEBF4E5C4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBD04FF85012AC95999643AA464083EA /* Build configuration list for PBXNativeTarget "Pods-HouseholdBudgetCalculator-HouseholdBudgetCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAB845AF7B8D8997393D3E804C0ACC77 /* Debug */,
+				FE9917FD8BDBB4F2C37F236F70A34F44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
