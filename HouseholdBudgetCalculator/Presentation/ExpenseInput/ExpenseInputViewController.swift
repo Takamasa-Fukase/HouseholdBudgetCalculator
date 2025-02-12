@@ -141,9 +141,19 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             cell.amountTextField.text = "\(item.amount)"
         }
         
-        cell.menuButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else {return}
+        let memu = UIMenu(options: .displayInline, children: [
+            UIMenu(title: "ステータスを変更", children: [
+                UIAction(title: "なし", handler: { _ in
+                    
+                }),
+                UIAction(title: "予定", handler: { _ in
+                    
+                }),
+                UIAction(title: "実績", handler: { _ in
+                    
+                })
+            ]),
+            UIAction(title: "削除", attributes: .destructive, handler: { _ in
                 let id = cell.id
                 guard let selectedItem = self.expenseGroup.items.first(where: { $0.id == id }) else {
                     print("選択されたItemの取得に失敗")
@@ -164,7 +174,6 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
                     
                     self.saveToUserDefaults()
                     
-                    //                self.tableView.reloadRows(at: [indexPath], with: .none)
                     // セクションヘッダーに表示してる金額も更新したいので、
                     // 単体でのdeleteRowsではなくsectionを丸ごと更新している
                     self.tableView.deleteRows(at: [indexPath], with: .none)
@@ -173,7 +182,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
                 alert.addAction(cancel)
                 alert.addAction(delete)
                 self.present(alert, animated: true)
-            }).disposed(by: cell.disposeBag)
+            })
+        ])
+        cell.menuButton.menu = memu
+        cell.menuButton.showsMenuAsPrimaryAction = true
         
         cell.titleTextField.rx.controlEvent(.editingDidEnd)
             .subscribe(onNext: { [weak self] in
