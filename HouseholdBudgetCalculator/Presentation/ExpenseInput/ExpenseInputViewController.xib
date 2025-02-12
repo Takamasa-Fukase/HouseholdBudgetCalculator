@@ -10,7 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpenseInputViewController" customModule="HouseholdBudgetCalculator" customModuleProvider="target">
             <connections>
+                <outlet property="budgetAmountLabel" destination="vO5-hi-Bbw" id="rbx-u9-xwP"/>
+                <outlet property="progressBar" destination="cEs-Sh-5p0" id="C64-d5-NlE"/>
+                <outlet property="restAmountLabel" destination="zHN-E2-mdA" id="uNB-a5-fUM"/>
                 <outlet property="tableView" destination="3ns-tb-gOr" id="ulc-bX-aAi"/>
+                <outlet property="usedAmountLabel" destination="K1q-H7-Six" id="uBK-FL-ztI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sg2-M5-0l3"/>
             </connections>
         </placeholder>
@@ -20,16 +24,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-tb-gOr">
-                    <rect key="frame" x="0.0" y="139" width="393" height="713"/>
+                    <rect key="frame" x="0.0" y="159" width="393" height="693"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r61-E0-32d">
-                    <rect key="frame" x="0.0" y="59" width="393" height="80"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-Sh-5p0" customClass="GTProgressBar" customModule="GTProgressBar">
-                            <rect key="frame" x="16" y="12" width="361" height="12"/>
+                            <rect key="frame" x="16" y="12" width="361" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="12" id="DjX-LQ-6RE"/>
+                                <constraint firstAttribute="height" constant="32" id="DjX-LQ-6RE"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="barFillColor">
@@ -51,9 +55,9 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orr-if-3iM">
-                            <rect key="frame" x="16" y="36" width="361" height="12"/>
+                            <rect key="frame" x="16" y="56" width="361" height="12"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出費：3.7万円" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1q-H7-Six">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累計：3.7万円" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1q-H7-Six">
                                     <rect key="frame" x="0.0" y="0.0" width="180.66666666666666" height="12"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
@@ -71,7 +75,7 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り：6.3万円" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHN-E2-mdA">
-                            <rect key="frame" x="16" y="56" width="361" height="17"/>
+                            <rect key="frame" x="16" y="76" width="361" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" systemColor="systemGreenColor"/>
                             <nil key="highlightedColor"/>
@@ -85,7 +89,7 @@
                         <constraint firstItem="cEs-Sh-5p0" firstAttribute="top" secondItem="r61-E0-32d" secondAttribute="top" constant="12" id="6gH-gK-g8z"/>
                         <constraint firstAttribute="trailing" secondItem="cEs-Sh-5p0" secondAttribute="trailing" constant="16" id="IVC-F1-MSc"/>
                         <constraint firstItem="cEs-Sh-5p0" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="PtR-bZ-YYj"/>
-                        <constraint firstAttribute="height" constant="80" id="VXR-WG-PoF"/>
+                        <constraint firstAttribute="height" constant="100" id="VXR-WG-PoF"/>
                         <constraint firstItem="zHN-E2-mdA" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="brc-GF-Xdj"/>
                         <constraint firstItem="Orr-if-3iM" firstAttribute="leading" secondItem="r61-E0-32d" secondAttribute="leading" constant="16" id="kYo-ro-c76"/>
                         <constraint firstAttribute="trailing" secondItem="zHN-E2-mdA" secondAttribute="trailing" constant="16" id="w2Z-oI-D5O"/>

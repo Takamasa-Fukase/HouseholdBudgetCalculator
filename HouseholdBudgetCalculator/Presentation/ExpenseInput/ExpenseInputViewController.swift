@@ -8,12 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import GTProgressBar
 
 class ExpenseInputViewController: UIViewController {
     let monthlyExpenseId: UUID
     var expenseGroup: ExpenseGroup
     var activeTextField: UIView?
 
+    @IBOutlet weak var progressBar: GTProgressBar!
+    @IBOutlet weak var usedAmountLabel: UILabel!
+    @IBOutlet weak var budgetAmountLabel: UILabel!
+    @IBOutlet weak var restAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     init(
@@ -32,11 +37,11 @@ class ExpenseInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        updateHeaderInfo()
     }
     
     func setupTableView() {
         tableView.register(UINib(nibName: ExpenseInputCell.className, bundle: nil), forCellReuseIdentifier: ExpenseInputCell.className)
-        tableView.register(UINib(nibName: ExpenseInputSectionHeader.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ExpenseInputSectionHeader.className)
         tableView.register(UINib(nibName: ExpenseInputSectionFooter.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ExpenseInputSectionFooter.className)
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,19 +57,33 @@ class ExpenseInputViewController: UIViewController {
         editedData[monthlyExpenseIndex].expenseGroups[expenseGroupIndex] = expenseGroup
         UserDefaults.monthlyExpenses = editedData
     }
+    
+    private func updateHeaderInfo() {
+        var usedAmount: Int = 0
+        expenseGroup.items.forEach({ item in
+            usedAmount += item.amount
+        })
+        let restAmount = expenseGroup.budgetAmount - usedAmount
+        usedAmountLabel.text = "累計：\(usedAmount)円"
+        budgetAmountLabel.text = "予算：\(expenseGroup.budgetAmount)円"
+        restAmountLabel.text = "残り：\(restAmount)円"
+        var progress = CGFloat(usedAmount) / CGFloat(expenseGroup.budgetAmount)
+        if progress > 1 {
+            progress = 1
+        }
+        progressBar.animateTo(progress: progress)
+
+        if restAmount >= 0 {
+            restAmountLabel.textColor = .systemGreen
+            progressBar.barFillColor = .systemBlue
+        }else {
+            restAmountLabel.textColor = .systemRed
+            progressBar.barFillColor = .systemRed
+        }
+    }
 }
 
 extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpenseInputSectionHeader.className) as! ExpenseInputSectionHeader
-        var sumAmount: Int = 0
-        expenseGroup.items.forEach({ item in
-            sumAmount += item.amount
-        })
-        sectionHeader.expenseTypeLabel.text = "\(expenseGroup.title)：\(sumAmount)円"
-        return sectionHeader
-    }
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let sectionFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpenseInputSectionFooter.className) as! ExpenseInputSectionFooter
         sectionFooter.formAddButton.rx.tap
@@ -89,7 +108,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 0.1
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -167,7 +186,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             self.saveToUserDefaults()
             
             // MEMO: セクションヘッダーに合計金額を表示しているため、セルだけでなくセクションを丸ごと更新している
-            self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .none)
+//            self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .none)
+                
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+                self.updateHeaderInfo()
             }).disposed(by: cell.disposeBag)
         
         return cell

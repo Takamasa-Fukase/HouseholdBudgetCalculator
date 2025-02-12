@@ -22,11 +22,13 @@ struct MonthlyExpense: Codable {
 struct ExpenseGroup: Codable {
     let id: UUID
     let title: String
+    let budgetAmount: Int
     var items: [ExpenseItem]
     
-    init(title: String, items: [ExpenseItem]) {
+    init(title: String, budgetAmount: Int, items: [ExpenseItem]) {
         self.id = UUID()
         self.title = title
+        self.budgetAmount = budgetAmount
         self.items = items
     }
 }

@@ -33,24 +33,36 @@ class MonthListViewController: UIViewController {
                 .init(
                     title: "2025年2月",
                     expenseGroups: [
-                        .init(title: "スーパー", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "1人外食", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "コンビニ・自販機", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "カラオケ", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "1人カフェ", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "友達との交際費", items: [
-                            .init(title: "", amount: 0)
-                        ])
+                        .init(title: "スーパー",
+                              budgetAmount: 25000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ]),
+                        .init(title: "1人外食",
+                              budgetAmount: 3000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ]),
+                        .init(title: "コンビニ・自販機",
+                              budgetAmount: 2000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ]),
+                        .init(title: "カラオケ",
+                              budgetAmount: 3000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ]),
+                        .init(title: "1人カフェ",
+                              budgetAmount: 10000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ]),
+                        .init(title: "友達との交際費",
+                              budgetAmount: 30000,
+                              items: [
+                                .init(title: "", amount: 0)
+                              ])
                     ]
                 )
             ]
