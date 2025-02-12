@@ -38,6 +38,8 @@ class ExpenseInputViewController: UIViewController {
         tableView.register(UINib(nibName: ExpenseInputCell.className, bundle: nil), forCellReuseIdentifier: ExpenseInputCell.className)
         tableView.register(UINib(nibName: ExpenseInputSectionHeader.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ExpenseInputSectionHeader.className)
         tableView.register(UINib(nibName: ExpenseInputSectionFooter.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ExpenseInputSectionFooter.className)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.keyboardDismissMode = .onDrag
         tableView.contentInset.bottom = 200
     }
