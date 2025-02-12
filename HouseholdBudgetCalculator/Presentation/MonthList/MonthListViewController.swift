@@ -24,8 +24,40 @@ class MonthListViewController: UIViewController {
         super.viewDidLoad()
         title = "月を選択"
         setupTableView()
+        createDataIfNotExists()
         monthlyExpenses = UserDefaults.monthlyExpenses
         tableView.reloadData()
+    }
+    
+    private func createDataIfNotExists() {
+        // データがまだ存在しない場合は追加
+        if UserDefaults.monthlyExpenses.isEmpty {
+            UserDefaults.monthlyExpenses = [
+                .init(
+                    title: "2025年2月",
+                    expenseGroups: [
+                        .init(title: "スーパー", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "1人外食", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "コンビニ・自販機", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "カラオケ", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "1人カフェ", items: [
+                            .init(title: "", amount: 0)
+                        ]),
+                        .init(title: "友達との交際費", items: [
+                            .init(title: "", amount: 0)
+                        ])
+                    ]
+                )
+            ]
+        }
     }
     
     private func setupTableView() {
@@ -46,7 +78,6 @@ extension MonthListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: MonthListCell.className, for: indexPath) as! MonthListCell
         cell.dateLabel.text = monthlyExpenses[indexPath.row].title
         return cell

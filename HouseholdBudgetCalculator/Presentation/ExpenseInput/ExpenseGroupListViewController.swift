@@ -22,7 +22,11 @@ class ExpenseGroupListViewController: UIViewController {
     
     private func setupParchment() {
         let vcs = monthlyExpense.expenseGroups.map { expenseGroup in
-            let vc = ExpenseInputViewController(expenseGroup: expenseGroup)
+            let vc = ExpenseInputViewController(
+                // 各画面内でUserDefaultsに保存する時にidを使うので渡す
+                monthlyExpenseId: monthlyExpense.id,
+                expenseGroup: expenseGroup
+            )
             vc.title = expenseGroup.title
             return vc
         }

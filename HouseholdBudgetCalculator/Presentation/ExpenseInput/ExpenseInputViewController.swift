@@ -10,12 +10,17 @@ import RxSwift
 import RxCocoa
 
 class ExpenseInputViewController: UIViewController {
+    let monthlyExpenseId: UUID
+    var expenseGroup: ExpenseGroup
     var activeTextField: UIView?
-    let expenseGroup: ExpenseGroup
 
     @IBOutlet weak var tableView: UITableView!
     
-    init(expenseGroup: ExpenseGroup) {
+    init(
+        monthlyExpenseId: UUID,
+        expenseGroup: ExpenseGroup
+    ) {
+        self.monthlyExpenseId = monthlyExpenseId
         self.expenseGroup = expenseGroup
         super.init(nibName: MonthListViewController.className, bundle: nil)
     }
@@ -26,39 +31,6 @@ class ExpenseInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // データがまだ存在しない場合は追加
-        if UserDefaults.monthlyExpenses.isEmpty {
-            UserDefaults.monthlyExpenses = [
-                .init(
-                    title: "2025年2月",
-                    expenseGroups: [
-                        .init(title: "スーパー", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "1人外食", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "コンビニ・自販機", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "カラオケ", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "1人カフェ", items: [
-                            .init(title: "", amount: 0)
-                        ]),
-                        .init(title: "友達との交際費", items: [
-                            .init(title: "", amount: 0)
-                        ])
-                    ]
-                )
-            ]
-        }
-        
-        // 取り出したデータを格納
-        monthlyExpense = UserDefaults.monthlyExpenses[0]
-        
         setupTableView()
     }
     
@@ -73,8 +45,9 @@ class ExpenseInputViewController: UIViewController {
     // この画面の変数で保持しているデータをUserDefaultsに保存する
     func saveToUserDefaults() {
         var editedData = UserDefaults.monthlyExpenses
-        let index = editedData.firstIndex(where: { $0.id == monthlyExpense.id }) ?? 0
-        editedData[index] = monthlyExpense
+        let monthlyExpenseIndex = editedData.firstIndex(where: { $0.id == monthlyExpenseId }) ?? 0
+        let expenseGroupIndex = editedData[monthlyExpenseIndex].expenseGroups.firstIndex(where: { $0.id == expenseGroup.id }) ?? 0
+        editedData[monthlyExpenseIndex].expenseGroups[expenseGroupIndex] = expenseGroup
         UserDefaults.monthlyExpenses = editedData
     }
 }
@@ -82,12 +55,11 @@ class ExpenseInputViewController: UIViewController {
 extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: ExpenseInputSectionHeader.className) as! ExpenseInputSectionHeader
-        let sectionData = monthlyExpense.expenseGroups[section]
         var sumAmount: Int = 0
-        sectionData.items.forEach({ item in
+        expenseGroup.items.forEach({ item in
             sumAmount += item.amount
         })
-        sectionHeader.expenseTypeLabel.text = "\(sectionData.title)：\(sumAmount)円"
+        sectionHeader.expenseTypeLabel.text = "\(expenseGroup.title)：\(sumAmount)円"
         return sectionHeader
     }
     
@@ -97,7 +69,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 let newItem = ExpenseItem(title: "", amount: 0)
-                self.monthlyExpense.expenseGroups[section].items.append(newItem)
+                self.expenseGroup.items.append(newItem)
                 
                 self.saveToUserDefaults()
                 
@@ -107,11 +79,11 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return monthlyExpense.expenseGroups.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return monthlyExpense.expenseGroups[section].items.count
+        return expenseGroup.items.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -124,7 +96,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ExpenseInputCell.className, for: indexPath) as! ExpenseInputCell
-        let item = monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row]
+        let item = expenseGroup.items[indexPath.row]
         
         // Delegateを親VCに設定
         cell.titleTextField.delegate = self
@@ -142,7 +114,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
             let id = cell.id
-            guard let selectedItem = self.monthlyExpense.expenseGroups.first(where: { $0.items.contains(where: { $0.id == id }) })?.items.first(where: { $0.id == id }) else {
+            guard let selectedItem = self.expenseGroup.items.first(where: { $0.id == id }) else {
                 print("選択されたItemの取得に失敗")
                 return
             }
@@ -154,13 +126,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             )
             let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
             let delete = UIAlertAction(title: "削除", style: .destructive) { _ in
-                let sectionIndex = self.monthlyExpense.expenseGroups.firstIndex(where: { section in
-                    section.items.contains(where: { $0.id == id })
-                }) ?? 0
-                let rowIndex = self.monthlyExpense.expenseGroups[sectionIndex].items.firstIndex(where: { $0.id == id }) ?? 0
-                let selectedIndexPath = IndexPath(row: rowIndex, section: sectionIndex)
+                let rowIndex = self.expenseGroup.items.firstIndex(where: { $0.id == id }) ?? 0
+                let selectedIndexPath = IndexPath(row: rowIndex, section: 0)
                 // 該当のデータを削除して画面を更新
-                self.monthlyExpense.expenseGroups[selectedIndexPath.section].items.remove(at: selectedIndexPath.row)
+                self.expenseGroup.items.remove(at: selectedIndexPath.row)
                 
                 self.saveToUserDefaults()
                 
@@ -177,7 +146,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
             let title = cell.titleTextField.text ?? ""
-            self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].title = title
+            self.expenseGroup.items[indexPath.row].title = title
             
             self.saveToUserDefaults()
             
@@ -190,8 +159,8 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
         cell.amountTextField.rx.controlEvent(.editingDidEnd)
             .subscribe(onNext: { [weak self] in
             guard let self = self else {return}
-            self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].title = cell.titleTextField.text ?? ""
-            self.monthlyExpense.expenseGroups[indexPath.section].items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
+            self.expenseGroup.items[indexPath.row].title = cell.titleTextField.text ?? ""
+            self.expenseGroup.items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
             
             self.saveToUserDefaults()
             
