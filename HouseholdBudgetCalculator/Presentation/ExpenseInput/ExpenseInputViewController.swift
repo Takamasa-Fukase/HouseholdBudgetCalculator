@@ -154,9 +154,8 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
                 
                 self.saveToUserDefaults()
                 
-                // セクションヘッダーに表示してる金額も更新したいので、
-                // 単体でのdeleteRowsではなくsectionを丸ごと更新している
-                self.tableView.reloadSections([indexPath.section], with: .automatic)
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+                self.updateHeaderInfo()
             }
             alert.addAction(cancel)
             alert.addAction(delete)
@@ -184,10 +183,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             self.expenseGroup.items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
             
             self.saveToUserDefaults()
-            
-            // MEMO: セクションヘッダーに合計金額を表示しているため、セルだけでなくセクションを丸ごと更新している
-//            self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .none)
-                
+                            
                 self.tableView.reloadRows(at: [indexPath], with: .none)
                 self.updateHeaderInfo()
             }).disposed(by: cell.disposeBag)
