@@ -15,6 +15,7 @@ class ExpenseInputCell: UITableViewCell {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
     
     override func awakeFromNib() {
@@ -22,6 +23,8 @@ class ExpenseInputCell: UITableViewCell {
         
         setupTitleTextField()
         setupAmountTextField()
+        statusLabel.layer.cornerRadius = 4
+        statusLabel.clipsToBounds = true
     }
     
     override func prepareForReuse() {

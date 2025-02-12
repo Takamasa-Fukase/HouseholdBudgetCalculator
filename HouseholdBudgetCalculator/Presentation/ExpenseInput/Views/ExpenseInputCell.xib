@@ -27,7 +27,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="金額" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7q-W6-8lT">
-                        <rect key="frame" x="16" y="46" width="253" height="32"/>
+                        <rect key="frame" x="16" y="46" width="183" height="32"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="5oS-2f-tcs"/>
@@ -36,7 +36,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(円)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-8b-dCQ">
-                        <rect key="frame" x="237" y="46" width="28" height="32"/>
+                        <rect key="frame" x="167" y="46" width="28" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="J7f-tx-BCY"/>
                         </constraints>
@@ -54,17 +54,30 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-Yt-NSB">
+                        <rect key="frame" x="237" y="52" width="40" height="20"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="HC3-ZM-AsR"/>
+                            <constraint firstAttribute="height" constant="20" id="yau-2I-6ef"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
+                    <constraint firstItem="X7q-W6-8lT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.55" id="0dc-tT-vpp"/>
+                    <constraint firstItem="pDh-ZU-mKG" firstAttribute="leading" secondItem="gkO-Yt-NSB" secondAttribute="trailing" constant="4" id="1Dy-SO-ZyS"/>
                     <constraint firstAttribute="trailing" secondItem="Buo-po-dsE" secondAttribute="trailing" constant="16" id="96t-c9-6Zg"/>
                     <constraint firstItem="Zic-8b-dCQ" firstAttribute="trailing" secondItem="X7q-W6-8lT" secondAttribute="trailing" constant="-4" id="Hyu-hE-wDL"/>
                     <constraint firstItem="Buo-po-dsE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Lab-qw-ck5"/>
+                    <constraint firstItem="gkO-Yt-NSB" firstAttribute="centerY" secondItem="pDh-ZU-mKG" secondAttribute="centerY" id="Lwt-fX-dbN"/>
                     <constraint firstItem="Buo-po-dsE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="RI3-6d-xbA"/>
                     <constraint firstItem="pDh-ZU-mKG" firstAttribute="centerY" secondItem="X7q-W6-8lT" secondAttribute="centerY" id="V57-OU-4Md"/>
                     <constraint firstItem="Zic-8b-dCQ" firstAttribute="height" secondItem="X7q-W6-8lT" secondAttribute="height" id="dof-UF-ITV"/>
                     <constraint firstItem="X7q-W6-8lT" firstAttribute="top" secondItem="Buo-po-dsE" secondAttribute="bottom" constant="6" id="iYD-7C-o5U"/>
-                    <constraint firstItem="pDh-ZU-mKG" firstAttribute="leading" secondItem="X7q-W6-8lT" secondAttribute="trailing" constant="12" id="jAi-Fr-NZr"/>
                     <constraint firstAttribute="bottom" secondItem="X7q-W6-8lT" secondAttribute="bottom" constant="8" id="m31-6I-5ow"/>
                     <constraint firstItem="Zic-8b-dCQ" firstAttribute="centerY" secondItem="X7q-W6-8lT" secondAttribute="centerY" id="pWx-dg-azF"/>
                     <constraint firstItem="X7q-W6-8lT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qGT-o7-1wF"/>
@@ -75,6 +88,7 @@
             <connections>
                 <outlet property="amountTextField" destination="X7q-W6-8lT" id="sog-zG-pHW"/>
                 <outlet property="menuButton" destination="pDh-ZU-mKG" id="xf2-QJ-LWE"/>
+                <outlet property="statusLabel" destination="gkO-Yt-NSB" id="Yka-Zh-sed"/>
                 <outlet property="titleTextField" destination="Buo-po-dsE" id="NUW-9n-56U"/>
             </connections>
             <point key="canvasLocation" x="84.732824427480907" y="38.380281690140848"/>
@@ -90,6 +104,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

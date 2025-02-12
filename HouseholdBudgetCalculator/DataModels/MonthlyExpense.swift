@@ -37,10 +37,17 @@ struct ExpenseItem: Codable {
     let id: UUID
     var title: String
     var amount: Int
+    var status: Status?
     
-    init(title: String, amount: Int) {
+    init(title: String, amount: Int, status: Status? = nil) {
         self.id = UUID()
         self.title = title
         self.amount = amount
+        self.status = status
+    }
+    
+    enum Status: Codable {
+        case planned
+        case actual
     }
 }

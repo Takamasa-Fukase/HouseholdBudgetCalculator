@@ -140,17 +140,43 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
         }else {
             cell.amountTextField.text = "\(item.amount)"
         }
+        if let status = item.status {
+            cell.statusLabel.isHidden = false
+            switch status {
+            case .planned:
+                cell.statusLabel.text = "予定"
+                cell.statusLabel.backgroundColor = .systemOrange
+            case .actual:
+                cell.statusLabel.text = "実績"
+                cell.statusLabel.backgroundColor = .systemGreen
+            }
+            
+        }else {
+            cell.statusLabel.isHidden = true
+        }
         
         let memu = UIMenu(options: .displayInline, children: [
             UIMenu(title: "ステータスを変更", children: [
                 UIAction(title: "なし", handler: { _ in
+                    self.expenseGroup.items[indexPath.row].status = nil
                     
+                    self.saveToUserDefaults()
+                    
+                    self.tableView.reloadRows(at: [indexPath], with: .none)
                 }),
                 UIAction(title: "予定", handler: { _ in
+                    self.expenseGroup.items[indexPath.row].status = .planned
                     
+                    self.saveToUserDefaults()
+                    
+                    self.tableView.reloadRows(at: [indexPath], with: .none)
                 }),
                 UIAction(title: "実績", handler: { _ in
+                    self.expenseGroup.items[indexPath.row].status = .actual
                     
+                    self.saveToUserDefaults()
+                    
+                    self.tableView.reloadRows(at: [indexPath], with: .none)
                 })
             ]),
             UIAction(title: "削除", attributes: .destructive, handler: { _ in
