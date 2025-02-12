@@ -22,7 +22,7 @@ class ExpenseInputViewController: UIViewController {
     ) {
         self.monthlyExpenseId = monthlyExpenseId
         self.expenseGroup = expenseGroup
-        super.init(nibName: MonthListViewController.className, bundle: nil)
+        super.init(nibName: ExpenseInputViewController.className, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
