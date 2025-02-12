@@ -37,7 +37,7 @@ class ExpenseInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        updateHeaderInfo()
+        updateHeaderInfo(animate: false)
     }
     
     func setupTableView() {
@@ -58,7 +58,7 @@ class ExpenseInputViewController: UIViewController {
         UserDefaults.monthlyExpenses = editedData
     }
     
-    private func updateHeaderInfo() {
+    private func updateHeaderInfo(animate: Bool) {
         var usedAmount: Int = 0
         expenseGroup.items.forEach({ item in
             usedAmount += item.amount
@@ -71,15 +71,25 @@ class ExpenseInputViewController: UIViewController {
         if progress > 1 {
             progress = 1
         }
-        progressBar.animateTo(progress: progress)
-
-        if restAmount >= 0 {
-            restAmountLabel.textColor = .systemGreen
-            progressBar.barFillColor = .systemBlue
+        if animate {
+            progressBar.animateTo(progress: progress)
         }else {
-            restAmountLabel.textColor = .systemRed
-            progressBar.barFillColor = .systemRed
+            progressBar.progress = progress
         }
+        let progressBasedColor: UIColor = {
+            switch progress {
+            case 0.5..<0.8:
+                return .systemYellow
+            case 0.8..<1:
+                return .systemOrange
+            case 1:
+                return .systemRed
+            default:
+                return .systemGreen
+            }
+        }()
+        restAmountLabel.textColor = progressBasedColor
+        progressBar.barFillColor = progressBasedColor
     }
 }
 
@@ -154,8 +164,11 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
                 
                 self.saveToUserDefaults()
                 
-                self.tableView.reloadRows(at: [indexPath], with: .none)
-                self.updateHeaderInfo()
+//                self.tableView.reloadRows(at: [indexPath], with: .none)
+                // セクションヘッダーに表示してる金額も更新したいので、
+                // 単体でのdeleteRowsではなくsectionを丸ごと更新している
+                self.tableView.deleteRows(at: [indexPath], with: .none)
+                self.updateHeaderInfo(animate: true)
             }
             alert.addAction(cancel)
             alert.addAction(delete)
@@ -185,7 +198,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             self.saveToUserDefaults()
                             
                 self.tableView.reloadRows(at: [indexPath], with: .none)
-                self.updateHeaderInfo()
+                self.updateHeaderInfo(animate: true)
             }).disposed(by: cell.disposeBag)
         
         return cell
