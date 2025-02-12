@@ -14,7 +14,7 @@ class ExpenseInputViewController: UIViewController {
     let monthlyExpenseId: UUID
     var expenseGroup: ExpenseGroup
     var activeTextField: UIView?
-
+    
     @IBOutlet weak var progressBar: GTProgressBar!
     @IBOutlet weak var usedAmountLabel: UILabel!
     @IBOutlet weak var budgetAmountLabel: UILabel!
@@ -48,7 +48,7 @@ class ExpenseInputViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.contentInset.bottom = 200
     }
-
+    
     // この画面の変数で保持しているデータをUserDefaultsに保存する
     func saveToUserDefaults() {
         var editedData = UserDefaults.monthlyExpenses
@@ -108,7 +108,7 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
             }).disposed(by: sectionFooter.disposeBag)
         return sectionFooter
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -143,60 +143,60 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
         
         cell.menuButton.rx.tap
             .subscribe(onNext: { [weak self] in
-            guard let self = self else {return}
-            let id = cell.id
-            guard let selectedItem = self.expenseGroup.items.first(where: { $0.id == id }) else {
-                print("選択されたItemの取得に失敗")
-                return
-            }
-            let message = "タイトル：\(selectedItem.title)\n金額：\(selectedItem.amount)"
-            let alert = UIAlertController(
-                title: "項目を削除します",
-                message: message,
-                preferredStyle: .alert
-            )
-            let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
-            let delete = UIAlertAction(title: "削除", style: .destructive) { _ in
-                let rowIndex = self.expenseGroup.items.firstIndex(where: { $0.id == id }) ?? 0
-                let selectedIndexPath = IndexPath(row: rowIndex, section: 0)
-                // 該当のデータを削除して画面を更新
-                self.expenseGroup.items.remove(at: selectedIndexPath.row)
-                
-                self.saveToUserDefaults()
-                
-//                self.tableView.reloadRows(at: [indexPath], with: .none)
-                // セクションヘッダーに表示してる金額も更新したいので、
-                // 単体でのdeleteRowsではなくsectionを丸ごと更新している
-                self.tableView.deleteRows(at: [indexPath], with: .none)
-                self.updateHeaderInfo(animate: true)
-            }
-            alert.addAction(cancel)
-            alert.addAction(delete)
-            self.present(alert, animated: true)
+                guard let self = self else {return}
+                let id = cell.id
+                guard let selectedItem = self.expenseGroup.items.first(where: { $0.id == id }) else {
+                    print("選択されたItemの取得に失敗")
+                    return
+                }
+                let message = "タイトル：\(selectedItem.title)\n金額：\(selectedItem.amount)"
+                let alert = UIAlertController(
+                    title: "項目を削除します",
+                    message: message,
+                    preferredStyle: .alert
+                )
+                let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
+                let delete = UIAlertAction(title: "削除", style: .destructive) { _ in
+                    let rowIndex = self.expenseGroup.items.firstIndex(where: { $0.id == id }) ?? 0
+                    let selectedIndexPath = IndexPath(row: rowIndex, section: 0)
+                    // 該当のデータを削除して画面を更新
+                    self.expenseGroup.items.remove(at: selectedIndexPath.row)
+                    
+                    self.saveToUserDefaults()
+                    
+                    //                self.tableView.reloadRows(at: [indexPath], with: .none)
+                    // セクションヘッダーに表示してる金額も更新したいので、
+                    // 単体でのdeleteRowsではなくsectionを丸ごと更新している
+                    self.tableView.deleteRows(at: [indexPath], with: .none)
+                    self.updateHeaderInfo(animate: true)
+                }
+                alert.addAction(cancel)
+                alert.addAction(delete)
+                self.present(alert, animated: true)
             }).disposed(by: cell.disposeBag)
         
         cell.titleTextField.rx.controlEvent(.editingDidEnd)
             .subscribe(onNext: { [weak self] in
-            guard let self = self else {return}
-            let title = cell.titleTextField.text ?? ""
-            self.expenseGroup.items[indexPath.row].title = title
-            
-            self.saveToUserDefaults()
-            
-            /*
-             項目名の入力後に完了をおさずにそのまま金額のフォームに移動するときにも更新してしまうと、金額のフォームのカーソルが消えてしまうバグがあるので、このタイミングでは更新しない。データソース自体は書き換えているので問題ないと思われる。
-             */
-//                self.tableView.reloadRows(at: [indexPath], with: .none)
+                guard let self = self else {return}
+                let title = cell.titleTextField.text ?? ""
+                self.expenseGroup.items[indexPath.row].title = title
+                
+                self.saveToUserDefaults()
+                
+                /*
+                 項目名の入力後に完了をおさずにそのまま金額のフォームに移動するときにも更新してしまうと、金額のフォームのカーソルが消えてしまうバグがあるので、このタイミングでは更新しない。データソース自体は書き換えているので問題ないと思われる。
+                 */
+                //                self.tableView.reloadRows(at: [indexPath], with: .none)
             }).disposed(by: cell.disposeBag)
         
         cell.amountTextField.rx.controlEvent(.editingDidEnd)
             .subscribe(onNext: { [weak self] in
-            guard let self = self else {return}
-            self.expenseGroup.items[indexPath.row].title = cell.titleTextField.text ?? ""
-            self.expenseGroup.items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
-            
-            self.saveToUserDefaults()
-                            
+                guard let self = self else {return}
+                self.expenseGroup.items[indexPath.row].title = cell.titleTextField.text ?? ""
+                self.expenseGroup.items[indexPath.row].amount = Int(cell.amountTextField.text ?? "0") ?? 0
+                
+                self.saveToUserDefaults()
+                
                 self.tableView.reloadRows(at: [indexPath], with: .none)
                 self.updateHeaderInfo(animate: true)
             }).disposed(by: cell.disposeBag)
