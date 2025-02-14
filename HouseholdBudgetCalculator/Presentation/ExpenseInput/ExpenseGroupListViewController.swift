@@ -94,7 +94,7 @@ class ExpenseGroupListViewController: UIViewController {
     private func shareJSONData(fileName: String) {
         let fileManager = FileManager.default
         guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let filePath = documentDirectory.appending(path: "tmp_monthlyExpense_for_sharing.json")
+        let filePath = documentDirectory.appending(path: "\(fileName).json")
         
         do {
             let jsonData = try JSONEncoder().encode(monthlyExpense)
@@ -103,8 +103,8 @@ class ExpenseGroupListViewController: UIViewController {
         } catch {
             print("jsonData.write error")
         }
-        
-        if fileManager.fileExists(atPath: filePath.path()) {
+
+        if fileManager.fileExists(atPath: filePath.path) {
             let activityVC = UIActivityViewController(activityItems: [filePath], applicationActivities: nil)
             present(activityVC, animated: true)
         }else {
