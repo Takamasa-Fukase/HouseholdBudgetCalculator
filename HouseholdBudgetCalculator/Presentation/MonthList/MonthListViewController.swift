@@ -26,6 +26,12 @@ class MonthListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func createButtonTapped(_ sender: Any) {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
+        documentPicker.delegate = self
+        present(documentPicker, animated: true)
+    }
+    
     private func createDataIfNotExists() {
         // データがまだ存在しない場合は追加
         if UserDefaults.monthlyExpenses.isEmpty {
@@ -96,5 +102,11 @@ extension MonthListViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = ExpenseGroupListViewController()
         vc.monthlyExpense = UserDefaults.monthlyExpenses[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MonthListViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        print("didPick: \(urls)")
     }
 }

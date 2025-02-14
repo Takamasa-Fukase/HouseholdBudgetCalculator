@@ -18,6 +18,24 @@ class ExpenseGroupListViewController: UIViewController {
         title = monthlyExpense.title
         view.backgroundColor = .systemBackground
         setupParchment()
+        setNaviBarRightButton(systemImageName: "ellipsis.circle") { [weak self] in
+            let vc = SettingsViewController(
+                googleLoginSelected: {
+                    
+                },
+                jsonDumpSelected: {
+                    print("jsonDumpSelected")
+                }
+            )
+            if let sheet = vc.sheetPresentationController {
+                sheet.detents = [.medium()]
+            }
+            vc.modalPresentationStyle = .pageSheet
+            self?.present(vc, animated: true)
+        }
+        setNaviBarRightButton(systemImageName: "calendar") {
+            
+        }
     }
     
     private func setupParchment() {

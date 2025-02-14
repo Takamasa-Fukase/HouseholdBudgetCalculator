@@ -453,6 +453,7 @@
 				DEVELOPMENT_TEAM = 37MFDT4LMQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HouseholdBudgetCalculator/Info.plist;
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "ファイルアプリから.jsonファイルを読み込む為に使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -481,6 +482,7 @@
 				DEVELOPMENT_TEAM = 37MFDT4LMQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HouseholdBudgetCalculator/Info.plist;
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "ファイルアプリから.jsonファイルを読み込む為に使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
