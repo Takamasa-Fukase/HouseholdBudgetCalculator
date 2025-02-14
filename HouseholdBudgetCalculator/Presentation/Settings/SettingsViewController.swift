@@ -58,8 +58,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             break
             
         case 1:
-            jsonDumpSelected()
-            dismiss(animated: true)
+            dismiss(animated: true) {
+                self.jsonDumpSelected()
+            }
             break
             
         default:

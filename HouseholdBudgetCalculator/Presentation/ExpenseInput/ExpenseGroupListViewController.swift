@@ -23,8 +23,18 @@ class ExpenseGroupListViewController: UIViewController {
                 googleLoginSelected: {
                     
                 },
-                jsonDumpSelected: {
-                    print("jsonDumpSelected")
+                jsonDumpSelected: { [weak self] in
+                    var textField = UITextField()
+                    let alert = UIAlertController(title: "ファイル名を入力", message: "書き出すファイルの名前を入力してください", preferredStyle: .alert)
+                    alert.addTextField { _textField in
+                        textField = _textField
+                        textField.returnKeyType = .done
+                    }
+                    alert.addAction(.init(title: "書き出し", style: .default) { _ in
+                        print("\(textField.text)")
+                    })
+                    alert.addAction(.init(title: "キャンセル", style: .cancel))
+                    self?.present(alert, animated: true)
                 }
             )
             if let sheet = vc.sheetPresentationController {
