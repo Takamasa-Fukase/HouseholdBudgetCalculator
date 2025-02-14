@@ -27,11 +27,12 @@ class ExpenseGroupListViewController: UIViewController {
                     var textField = UITextField()
                     let alert = UIAlertController(title: "ファイル名を入力", message: "書き出すファイルの名前を入力してください", preferredStyle: .alert)
                     alert.addTextField { _textField in
+                        _textField.text = self?.monthlyExpense.title
                         textField = _textField
                         textField.returnKeyType = .done
                     }
-                    alert.addAction(.init(title: "書き出し", style: .default) { _ in
-                        print("\(textField.text)")
+                    alert.addAction(.init(title: "OK", style: .default) { _ in
+                        self?.shareJSONData(fileName: textField.text ?? "")
                     })
                     alert.addAction(.init(title: "キャンセル", style: .cancel))
                     self?.present(alert, animated: true)
@@ -88,5 +89,26 @@ class ExpenseGroupListViewController: UIViewController {
         pagingViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         pagingViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pagingViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    private func shareJSONData(fileName: String) {
+        let fileManager = FileManager.default
+        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let filePath = documentDirectory.appending(path: "tmp_monthlyExpense_for_sharing.json")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(monthlyExpense)
+            try jsonData.write(to: filePath, options: .atomic)
+            
+        } catch {
+            print("jsonData.write error")
+        }
+        
+        if fileManager.fileExists(atPath: filePath.path()) {
+            let activityVC = UIActivityViewController(activityItems: [filePath], applicationActivities: nil)
+            present(activityVC, animated: true)
+        }else {
+            print("パスが存在しません: \(filePath)")
+        }
     }
 }

@@ -45,7 +45,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             cell.label.text = "Googleカレンダーを連携"
         case 1:
-            cell.label.text = "JSONファイルに書き出す"
+            cell.label.text = "JSONファイルに書き出して共有"
         default:
             cell.label.text = ""
         }
