@@ -22,57 +22,37 @@ class MonthListViewController: UIViewController {
         super.viewDidLoad()
         title = "月を選択"
         setupTableView()
-        createDataIfNotExists()
         tableView.reloadData()
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
-        documentPicker.delegate = self
-        present(documentPicker, animated: true)
-    }
-    
-    private func createDataIfNotExists() {
-        // データがまだ存在しない場合は追加
-        if UserDefaults.monthlyExpenses.isEmpty {
-            UserDefaults.monthlyExpenses = [
-                .init(
-                    title: "2025年2月",
-                    expenseGroups: [
-                        .init(title: "スーパー",
-                              budgetAmount: 25000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ]),
-                        .init(title: "1人外食",
-                              budgetAmount: 3000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ]),
-                        .init(title: "コンビニ・自販機",
-                              budgetAmount: 2000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ]),
-                        .init(title: "カラオケ",
-                              budgetAmount: 3000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ]),
-                        .init(title: "1人カフェ",
-                              budgetAmount: 10000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ]),
-                        .init(title: "友達との交際費",
-                              budgetAmount: 30000,
-                              items: [
-                                .init(title: "", amount: 0)
-                              ])
-                    ]
-                )
-            ]
+        let vc = CommonMenuViewController(menuItems: [
+            .init(title: "デフォルトテンプレートから作成", onSelected: { [weak self] in
+                var textField = UITextField()
+                let alert = UIAlertController(title: "タイトルを入力", message: "作成する支出入力データのタイトルを入力してください", preferredStyle: .alert)
+                alert.addTextField { _textField in
+                    textField = _textField
+                    textField.returnKeyType = .done
+                }
+                alert.addAction(.init(title: "OK", style: .default) { _ in
+                    self?.createMonthlyExpenseDataFromDefaultTemplate(title: textField.text ?? "")
+                })
+                alert.addAction(.init(title: "キャンセル", style: .cancel))
+                self?.present(alert, animated: true)
+            }),
+            .init(title: "JSONファイルから作成", onSelected: { [weak self] in
+                self?.showDocumentPickerVC()
+            }),
+        ])
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [
+                .custom(resolver: { context in
+                    return 200
+                })]
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
         }
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
     }
     
     private func setupTableView() {
@@ -80,6 +60,53 @@ class MonthListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.top = 16
+    }
+    
+    private func createMonthlyExpenseDataFromDefaultTemplate(title: String) {
+        UserDefaults.monthlyExpenses += [
+            .init(
+                title: title,
+                expenseGroups: [
+                    .init(title: "スーパー",
+                          budgetAmount: 25000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ]),
+                    .init(title: "1人外食",
+                          budgetAmount: 3000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ]),
+                    .init(title: "コンビニ・自販機",
+                          budgetAmount: 2000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ]),
+                    .init(title: "カラオケ",
+                          budgetAmount: 3000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ]),
+                    .init(title: "1人カフェ",
+                          budgetAmount: 10000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ]),
+                    .init(title: "友達との交際費",
+                          budgetAmount: 30000,
+                          items: [
+                            .init(title: "", amount: 0)
+                          ])
+                ]
+            )
+        ]
+        tableView.reloadData()
+    }
+    
+    private func showDocumentPickerVC() {
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
+        documentPicker.delegate = self
+        present(documentPicker, animated: true)
     }
 }
 
