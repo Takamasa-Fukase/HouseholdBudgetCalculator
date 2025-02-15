@@ -125,6 +125,10 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
         return 64
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
