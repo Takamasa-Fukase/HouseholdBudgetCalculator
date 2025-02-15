@@ -125,6 +125,17 @@ extension ExpenseInputViewController: UITableViewDelegate, UITableViewDataSource
         return 64
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedItem = expenseGroup.items[sourceIndexPath.row]
+        expenseGroup.items.remove(at: sourceIndexPath.row)
+        expenseGroup.items.insert(movedItem, at: destinationIndexPath.row)
+        saveToUserDefaults()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ExpenseInputCell.className, for: indexPath) as! ExpenseInputCell
         let item = expenseGroup.items[indexPath.row]
