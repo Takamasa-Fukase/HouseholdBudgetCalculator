@@ -108,5 +108,17 @@ extension MonthListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MonthListViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         print("didPick: \(urls)")
+        guard let url = urls.first else { return }
+        guard url.startAccessingSecurityScopedResource() else { return }
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let monthlyExpense = try JSONDecoder().decode(MonthlyExpense.self, from: jsonData)
+            UserDefaults.monthlyExpenses += [monthlyExpense]
+            tableView.reloadData()
+            
+        } catch {
+            print("error: \(error)")
+        }
+        url.stopAccessingSecurityScopedResource()
     }
 }

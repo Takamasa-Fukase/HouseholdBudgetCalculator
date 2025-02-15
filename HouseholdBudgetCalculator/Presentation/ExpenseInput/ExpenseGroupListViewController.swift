@@ -101,7 +101,7 @@ class ExpenseGroupListViewController: UIViewController {
             try jsonData.write(to: filePath, options: .atomic)
             
         } catch {
-            print("jsonData.write error")
+            print("jsonData.write error: \(error)")
         }
 
         if fileManager.fileExists(atPath: filePath.path) {
