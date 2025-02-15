@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="height" constant="48" id="0h1-JI-OoI"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="+ JSONから作成"/>
+                            <buttonConfiguration key="configuration" style="filled" title="+ 支出入力データを作成"/>
                             <connections>
                                 <action selector="createButtonTapped:" destination="-1" eventType="touchUpInside" id="gWT-j5-Cb7"/>
                             </connections>

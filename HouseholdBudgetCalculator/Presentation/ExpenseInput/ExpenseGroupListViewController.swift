@@ -19,11 +19,11 @@ class ExpenseGroupListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupParchment()
         setNaviBarRightButton(systemImageName: "ellipsis.circle") { [weak self] in
-            let vc = SettingsViewController(
-                googleLoginSelected: {
+            let vc = CommonMenuViewController(menuItems: [
+                .init(title: "Googleカレンダーを連携", onSelected: { [weak self] in
                     
-                },
-                jsonDumpSelected: { [weak self] in
+                }),
+                .init(title: "JSONファイルに書き出して共有", onSelected: { [weak self] in
                     var textField = UITextField()
                     let alert = UIAlertController(title: "ファイル名を入力", message: "書き出すファイルの名前を入力してください", preferredStyle: .alert)
                     alert.addTextField { _textField in
@@ -36,10 +36,14 @@ class ExpenseGroupListViewController: UIViewController {
                     })
                     alert.addAction(.init(title: "キャンセル", style: .cancel))
                     self?.present(alert, animated: true)
-                }
-            )
+                }),
+            ])
             if let sheet = vc.sheetPresentationController {
-                sheet.detents = [.medium()]
+                sheet.detents = [
+                    .custom(resolver: { context in
+                        return 200
+                    })]
+                sheet.prefersScrollingExpandsWhenScrolledToEdge = true
             }
             vc.modalPresentationStyle = .pageSheet
             self?.present(vc, animated: true)

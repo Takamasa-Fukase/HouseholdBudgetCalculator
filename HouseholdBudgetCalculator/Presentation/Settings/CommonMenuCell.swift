@@ -1,5 +1,5 @@
 //
-//  SettingsCell.swift
+//  CommonMenuCell.swift
 //  HouseholdBudgetCalculator
 //
 //  Created by ウルトラ深瀬 on 14/2/25.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SettingsCell: UITableViewCell {
+class CommonMenuCell: UITableViewCell {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
