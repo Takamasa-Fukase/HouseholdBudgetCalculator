@@ -40,7 +40,13 @@ class ExpenseInputViewController: UIViewController {
         updateHeaderInfo(animate: false)
     }
     
-    func setupTableView() {
+    func updateTableViewEditingMode(isOn: Bool, animated: Bool) {
+        if tableView != nil {
+            tableView.setEditing(isOn, animated: animated)
+        }
+    }
+    
+    private func setupTableView() {
         tableView.register(UINib(nibName: ExpenseInputCell.className, bundle: nil), forCellReuseIdentifier: ExpenseInputCell.className)
         tableView.register(UINib(nibName: ExpenseInputSectionFooter.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ExpenseInputSectionFooter.className)
         tableView.delegate = self
@@ -50,7 +56,7 @@ class ExpenseInputViewController: UIViewController {
     }
     
     // この画面の変数で保持しているデータをUserDefaultsに保存する
-    func saveToUserDefaults() {
+    private func saveToUserDefaults() {
         var editedData = UserDefaults.monthlyExpenses
         let monthlyExpenseIndex = editedData.firstIndex(where: { $0.id == monthlyExpenseId }) ?? 0
         let expenseGroupIndex = editedData[monthlyExpenseIndex].expenseGroups.firstIndex(where: { $0.id == expenseGroup.id }) ?? 0

@@ -9,52 +9,75 @@ import UIKit
 import Parchment
 
 class ExpenseGroupListViewController: UIViewController {
+    var viewControllers: [ExpenseInputViewController] = []
     var pagingViewController: PagingViewController!
     // TODO: initでDIしてletにしたい
     var monthlyExpense: MonthlyExpense = .init(title: "", expenseGroups: [])
+    var isTableViewEditingModeOn = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = monthlyExpense.title
         view.backgroundColor = .systemBackground
         setupParchment()
-        setNaviBarRightButton(systemImageName: "ellipsis.circle") { [weak self] in
-            let vc = CommonMenuViewController(menuItems: [
-                .init(title: "Googleカレンダーを連携", onSelected: { [weak self] in
-                    
-                }),
-                .init(title: "JSONファイルに書き出して共有", onSelected: { [weak self] in
-                    var textField = UITextField()
-                    let alert = UIAlertController(title: "ファイル名を入力", message: "書き出すファイルの名前を入力してください", preferredStyle: .alert)
-                    alert.addTextField { _textField in
-                        _textField.text = self?.monthlyExpense.title
-                        textField = _textField
-                        textField.returnKeyType = .done
-                    }
-                    alert.addAction(.init(title: "OK", style: .default) { _ in
-                        self?.shareJSONData(fileName: textField.text ?? "")
-                    })
-                    alert.addAction(.init(title: "キャンセル", style: .cancel))
-                    self?.present(alert, animated: true)
-                }),
-            ])
-            if let sheet = vc.sheetPresentationController {
-                sheet.detents = [
-                    .custom(resolver: { context in
-                        return 200
-                    })]
-                sheet.prefersScrollingExpandsWhenScrolledToEdge = true
-            }
-            vc.modalPresentationStyle = .pageSheet
-            self?.present(vc, animated: true)
-        }
-        setNaviBarRightButton(systemImageName: "calendar") {
+        updateNaviBarButtons()
+    }
+    
+    private func updateNaviBarButtons() {
+        if isTableViewEditingModeOn {
+            let button = UIButton(frame: CGRect(x: .zero, y: .zero, width: 100, height: 40))
+            button.setTitle("並べ替え完了", for: .normal)
+            navigationItem.setRightBarButton(UIBarButtonItem(customView: button), animated: false)
+            button.addAction(UIAction(handler: { _ in
+                self.isTableViewEditingModeOn = false
+                self.viewControllers.forEach({ $0.updateTableViewEditingMode(isOn: false, animated: true) })
+                self.updateNaviBarButtons()
+            }), for: .touchUpInside)
             
+        } else {
+            setNaviBarRightButton(systemImageName: "ellipsis.circle") { [weak self] in
+                let vc = CommonMenuViewController(menuItems: [
+                    .init(title: "Googleカレンダーを連携", onSelected: { [weak self] in
+                        
+                    }),
+                    .init(title: "JSONファイルに書き出して共有", onSelected: { [weak self] in
+                        var textField = UITextField()
+                        let alert = UIAlertController(title: "ファイル名を入力", message: "書き出すファイルの名前を入力してください", preferredStyle: .alert)
+                        alert.addTextField { _textField in
+                            _textField.text = self?.monthlyExpense.title
+                            textField = _textField
+                            textField.returnKeyType = .done
+                        }
+                        alert.addAction(.init(title: "OK", style: .default) { _ in
+                            self?.shareJSONData(fileName: textField.text ?? "")
+                        })
+                        alert.addAction(.init(title: "キャンセル", style: .cancel))
+                        self?.present(alert, animated: true)
+                    }),
+                    .init(title: "並び替え", onSelected: { [weak self] in
+                        self?.isTableViewEditingModeOn = true
+                        self?.viewControllers.forEach({ $0.updateTableViewEditingMode(isOn: true, animated: true) })
+                        self?.updateNaviBarButtons()
+                    }),
+                ])
+                if let sheet = vc.sheetPresentationController {
+                    sheet.detents = [
+                        .custom(resolver: { context in
+                            return 200
+                        })]
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+                }
+                vc.modalPresentationStyle = .pageSheet
+                self?.present(vc, animated: true)
+            }
+            setNaviBarRightButton(systemImageName: "calendar") {
+                
+            }
         }
     }
     
     private func setupParchment() {
-        let vcs = monthlyExpense.expenseGroups.map { expenseGroup in
+        viewControllers = monthlyExpense.expenseGroups.map { expenseGroup in
             let vc = ExpenseInputViewController(
                 // 各画面内でUserDefaultsに保存する時にidを使うので渡す
                 monthlyExpenseId: monthlyExpense.id,
@@ -64,7 +87,7 @@ class ExpenseGroupListViewController: UIViewController {
             return vc
         }
         
-        pagingViewController = .init(viewControllers: vcs)
+        pagingViewController = .init(viewControllers: viewControllers)
         pagingViewController.textColor = .systemGray
         pagingViewController.selectedTextColor = .label
         pagingViewController.menuBackgroundColor = .systemBackground
