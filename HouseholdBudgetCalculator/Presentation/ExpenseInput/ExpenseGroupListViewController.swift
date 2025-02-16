@@ -25,9 +25,14 @@ class ExpenseGroupListViewController: UIViewController {
     }
     
     private func updateNaviBarButtons() {
+        // 一度リセット
+        navigationItem.rightBarButtonItems?.removeAll()
+        
         if isTableViewEditingModeOn {
             let button = UIButton(frame: CGRect(x: .zero, y: .zero, width: 100, height: 40))
             button.setTitle("並べ替え完了", for: .normal)
+            button.setTitleColor(.tintColor, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
             navigationItem.setRightBarButton(UIBarButtonItem(customView: button), animated: false)
             button.addAction(UIAction(handler: { _ in
                 self.isTableViewEditingModeOn = false
