@@ -31,7 +31,7 @@ class ExpenseGroupListViewController: UIViewController {
             navigationItem.setRightBarButton(UIBarButtonItem(customView: button), animated: false)
             button.addAction(UIAction(handler: { _ in
                 self.isTableViewEditingModeOn = false
-                self.viewControllers.forEach({ $0.updateTableViewEditingMode(isOn: false, animated: true) })
+                self.viewControllers[self.selectedVCIndex].updateTableViewEditingMode(isOn: false, animated: true)
                 self.updateNaviBarButtons()
             }), for: .touchUpInside)
             
@@ -57,7 +57,7 @@ class ExpenseGroupListViewController: UIViewController {
                     }),
                     .init(title: "並び替え", onSelected: { [weak self] in
                         self?.isTableViewEditingModeOn = true
-                        self?.viewControllers.forEach({ $0.updateTableViewEditingMode(isOn: true, animated: true) })
+                        self?.viewControllers[self?.selectedVCIndex ?? 0].updateTableViewEditingMode(isOn: true, animated: true)
                         self?.updateNaviBarButtons()
                     }),
                 ])
@@ -156,5 +156,10 @@ extension ExpenseGroupListViewController: PagingViewControllerDelegate {
         } else {
             selectedVCIndex = monthlyExpense.expenseGroups.firstIndex(where: { $0.id == startingVC.expenseGroup.id }) ?? 0
         }
+    }
+    
+    func pagingViewController(_: PagingViewController, willScrollToItem pagingItem: any PagingItem, startingViewController: UIViewController, destinationViewController: UIViewController) {
+        guard let destinationVC = destinationViewController as? ExpenseInputViewController else { return }
+        destinationVC.updateTableViewEditingMode(isOn: isTableViewEditingModeOn, animated: false)
     }
 }
