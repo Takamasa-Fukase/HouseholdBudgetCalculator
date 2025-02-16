@@ -14,6 +14,7 @@ class ExpenseGroupListViewController: UIViewController {
     // TODO: initでDIしてletにしたい
     var monthlyExpense: MonthlyExpense = .init(title: "", expenseGroups: [])
     var isTableViewEditingModeOn = false
+    var selectedVCIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +108,9 @@ class ExpenseGroupListViewController: UIViewController {
         
         // 最初に表示するページを設定
         pagingViewController.select(index: mostUsedExpenseGroupIndex)
+        selectedVCIndex = mostUsedExpenseGroupIndex
+        
+        pagingViewController.delegate = self
         
         addChild(pagingViewController)
         view.addSubview(pagingViewController.view)
@@ -136,6 +140,21 @@ class ExpenseGroupListViewController: UIViewController {
             present(activityVC, animated: true)
         }else {
             print("パスが存在しません: \(filePath)")
+        }
+    }
+}
+
+extension ExpenseGroupListViewController: PagingViewControllerDelegate {
+    func pagingViewController(_ pagingViewController: PagingViewController, didScrollToItem pagingItem: any PagingItem, startingViewController: UIViewController?, destinationViewController: UIViewController, transitionSuccessful: Bool) {
+        guard let startingVC = startingViewController as? ExpenseInputViewController,
+           let destinationVC = destinationViewController as? ExpenseInputViewController else {
+            return
+        }
+        if transitionSuccessful {
+            selectedVCIndex = monthlyExpense.expenseGroups.firstIndex(where: { $0.id == destinationVC.expenseGroup.id }) ?? 0
+            
+        } else {
+            selectedVCIndex = monthlyExpense.expenseGroups.firstIndex(where: { $0.id == startingVC.expenseGroup.id }) ?? 0
         }
     }
 }
